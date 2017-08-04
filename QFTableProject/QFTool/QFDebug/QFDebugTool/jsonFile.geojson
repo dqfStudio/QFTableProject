@@ -1,0 +1,18 @@
+{
+    "sections": [
+                 {
+                 "selector": "getSection",
+                 "cells": [
+                           "getTrackingCell",
+                           "getNetworkCell"
+                           ]
+                 },
+                 {
+                 "selector": "getSection",
+                 "cells": [
+                           "getViewCell",
+                           "getViewCell"
+                           ]
+                 }
+                 ]
+}
