@@ -14,7 +14,6 @@
 		154C65D01F34184A0060A4C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154C65CF1F34184A0060A4C0 /* Assets.xcassets */; };
 		154C65D31F34184A0060A4C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154C65D11F34184A0060A4C0 /* LaunchScreen.storyboard */; };
 		154C66241F3418860060A4C0 /* NSObject+selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C65DD1F3418850060A4C0 /* NSObject+selector.m */; };
-		154C66281F3418860060A4C0 /* jsonFile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 154C65E91F3418850060A4C0 /* jsonFile.geojson */; };
 		154C66361F3418860060A4C0 /* QFBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C660C1F3418850060A4C0 /* QFBaseCell.m */; };
 		154C66371F3418860060A4C0 /* QFEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C660E1F3418850060A4C0 /* QFEventCell.m */; };
 		154C66381F3418860060A4C0 /* QFCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C66111F3418850060A4C0 /* QFCellModel.m */; };
@@ -24,6 +23,7 @@
 		154C663D1F3418860060A4C0 /* QFSectionStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C661E1F3418860060A4C0 /* QFSectionStyle.m */; };
 		154C663E1F3418860060A4C0 /* QFTableStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C66201F3418860060A4C0 /* QFTableStyle.m */; };
 		154C663F1F3418860060A4C0 /* QFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C66231F3418860060A4C0 /* QFTableView.m */; };
+		154C66421F3428B80060A4C0 /* jsonFile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 154C66411F3428B80060A4C0 /* jsonFile.geojson */; };
 		5D40F858FBDE9471DD342B76 /* libPods-QFTableProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,6 @@
 		154C65D41F34184A0060A4C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		154C65DC1F3418850060A4C0 /* NSObject+selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+selector.h"; sourceTree = "<group>"; };
 		154C65DD1F3418850060A4C0 /* NSObject+selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+selector.m"; sourceTree = "<group>"; };
-		154C65E91F3418850060A4C0 /* jsonFile.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonFile.geojson; sourceTree = "<group>"; };
 		154C660B1F3418850060A4C0 /* QFBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFBaseCell.h; sourceTree = "<group>"; };
 		154C660C1F3418850060A4C0 /* QFBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFBaseCell.m; sourceTree = "<group>"; };
 		154C660D1F3418850060A4C0 /* QFEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFEventCell.h; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		154C66201F3418860060A4C0 /* QFTableStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTableStyle.m; sourceTree = "<group>"; };
 		154C66221F3418860060A4C0 /* QFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTableView.h; sourceTree = "<group>"; };
 		154C66231F3418860060A4C0 /* QFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTableView.m; sourceTree = "<group>"; };
+		154C66411F3428B80060A4C0 /* jsonFile.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonFile.geojson; sourceTree = "<group>"; };
 		9B01B75CFD6B0755D48FD6E5 /* Pods-QFTableProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFTableProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-QFTableProject/Pods-QFTableProject.release.xcconfig"; sourceTree = "<group>"; };
 		B0EA4840998F05EF1F7BC178 /* Pods-QFTableProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFTableProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QFTableProject/Pods-QFTableProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QFTableProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				154C65DB1F3418850060A4C0 /* NSObject+selector */,
-				154C65DE1F3418850060A4C0 /* QFDebug */,
 				154C66091F3418850060A4C0 /* QFTable */,
 			);
 			path = QFTool;
@@ -148,25 +147,10 @@
 			path = "NSObject+selector";
 			sourceTree = "<group>";
 		};
-		154C65DE1F3418850060A4C0 /* QFDebug */ = {
-			isa = PBXGroup;
-			children = (
-				154C65E61F3418850060A4C0 /* QFDebugTool */,
-			);
-			path = QFDebug;
-			sourceTree = "<group>";
-		};
-		154C65E61F3418850060A4C0 /* QFDebugTool */ = {
-			isa = PBXGroup;
-			children = (
-				154C65E91F3418850060A4C0 /* jsonFile.geojson */,
-			);
-			path = QFDebugTool;
-			sourceTree = "<group>";
-		};
 		154C66091F3418850060A4C0 /* QFTable */ = {
 			isa = PBXGroup;
 			children = (
+				154C66401F3428B80060A4C0 /* Resource */,
 				154C660A1F3418850060A4C0 /* Cell */,
 				154C660F1F3418850060A4C0 /* Model */,
 				154C661A1F3418850060A4C0 /* Style */,
@@ -221,6 +205,14 @@
 				154C66231F3418860060A4C0 /* QFTableView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		154C66401F3428B80060A4C0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				154C66411F3428B80060A4C0 /* jsonFile.geojson */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		4AA22BC695F25BD671C40A1E /* Pods */ = {
@@ -295,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				154C65D31F34184A0060A4C0 /* LaunchScreen.storyboard in Resources */,
-				154C66281F3418860060A4C0 /* jsonFile.geojson in Resources */,
+				154C66421F3428B80060A4C0 /* jsonFile.geojson in Resources */,
 				154C65D01F34184A0060A4C0 /* Assets.xcassets in Resources */,
 				154C65CE1F34184A0060A4C0 /* Main.storyboard in Resources */,
 			);
