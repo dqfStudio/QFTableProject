@@ -48,6 +48,27 @@
         [self.table loadView:self withJson:data];
     };
     
+//    @ws
+//    self.table.refreshBlock = ^{
+//        @ss
+//        NSArray *arr = @[@"getSection<0>&getTrackingCell",
+//                         @"getSection<0>&getNetworkCell",
+//                         @"getSection<1>&getViewCell",
+//                         @"getSection<1>&getViewCell"];
+//        sleep(2);
+//        [self.table refreshView:self withArr:arr];
+//    };
+//    
+//    self.table.loadMoreBlock = ^{
+//        @ss
+//        NSArray *arr = @[@"getSection<0>&getTrackingCell",
+//                         @"getSection<0>&getNetworkCell",
+//                         @"getSection<1>&getViewCell",
+//                         @"getSection<1>&getViewCell"];
+//        sleep(2);
+//        [self.table loadView:self withArr:arr];
+//    };
+    
     //先刷新一次数据
     self.table.refreshBlock();
     

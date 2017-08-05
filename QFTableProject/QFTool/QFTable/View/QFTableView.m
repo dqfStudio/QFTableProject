@@ -58,25 +58,33 @@
 }
 
 - (void)refreshView:(id)object withJson:(NSData *)json {
-    if (json) {
-        //先清除数据
-        [self clearModel];
-        [self loadView:object withJson:json];
-    }
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:json
+                                                         options:NSJSONReadingMutableContainers
+                                                           error:nil];
+    [self refreshView:object withArr:dict[@"table"]];
+}
+
+- (void)refreshView:(id)object withArr:(NSArray *)arr {
+    //先清除数据
+    [self clearModel];
+    [self loadView:object withArr:arr];
 }
 
 - (void)loadView:(id)object withJson:(NSData *)json {
-    
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:json
                                                         options:NSJSONReadingMutableContainers
                                                           error:nil];
+    [self loadView:object withArr:dict[@"table"]];
+}
+
+- (void)loadView:(id)object withArr:(NSArray *)arr {
     
-    for (NSString *url in dict[@"table"]) {
+    for (NSString *url in arr) {
         
         NSString *sectionSelector = nil;
         NSString *cellSelector = nil;
         NSString *section = nil;
-
+        
         
         NSRange symbolRange = [url rangeOfString:@"&"];
         NSRange leftRange   = [url rangeOfString:@"<"];

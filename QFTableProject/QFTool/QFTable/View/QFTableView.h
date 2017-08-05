@@ -42,6 +42,10 @@ typedef void (^QFLoadMoreBlock)();
 
 - (void)refreshView:(id)object withJson:(NSData *)json;
 
+- (void)refreshView:(id)object withArr:(NSArray *)arr;
+
+- (void)loadView:(id)object withArr:(NSArray *)arr;
+
 - (void)loadView:(id)object withJson:(NSData *)json;
 
 - (void)setRefreshBlock:(QFRefreshBlock)refreshBlock;
