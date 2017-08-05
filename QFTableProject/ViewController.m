@@ -53,15 +53,17 @@
     
 }
 
-- (void)getSection {
-    QFSectionModel *sectionModel = [QFSectionModel section];
-    [self.table addModel:sectionModel];
-    
-    sectionModel.headerHeight = 22;
-    sectionModel.footerHeight = 1;
+- (void)getSection:(NSString *)section {
+    QFSectionModel *sectionModel = [self.table objectAtIndex:section.integerValue];
+    if (!sectionModel) {
+        sectionModel = [QFSectionModel section];
+        sectionModel.headerHeight = 22;
+        sectionModel.footerHeight = 1;
+        [self.table addModel:sectionModel];
+    }
 }
 
-- (void)getTrackingCell:(NSNumber *)index {
+- (void)getTrackingCell:(NSString *)section {
     QFCellModel *cellModel = [QFCellModel cell];
     cellModel.height = 55;
     cellModel.renderBlock = ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
@@ -75,10 +77,10 @@
     cellModel.selectionBlock = ^(NSIndexPath *indexPath, UITableView *table) {
         [table deselectRowAtIndexPath:indexPath animated:YES];
     };
-    [[self.table objectAtIndex:index.integerValue] addObject:cellModel];
+    [[self.table objectAtIndex:section.integerValue] addObject:cellModel];
 }
 
-- (void)getNetworkCell:(NSNumber *)index {
+- (void)getNetworkCell:(NSString *)section {
     QFCellModel *cellModel = [QFCellModel cell];
     cellModel.height = 55;
     cellModel.renderBlock = ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
@@ -92,10 +94,10 @@
     cellModel.selectionBlock = ^(NSIndexPath *indexPath, UITableView *table) {
         [table deselectRowAtIndexPath:indexPath animated:YES];
     };
-    [[self.table objectAtIndex:index.integerValue] addObject:cellModel];
+    [[self.table objectAtIndex:section.integerValue] addObject:cellModel];
 }
 
-- (void)getViewCell:(NSNumber *)index {
+- (void)getViewCell:(NSString *)section {
     QFCellModel *cellModel = [QFCellModel cell];
     cellModel.height = 55;
     cellModel.renderBlock = ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
@@ -109,7 +111,7 @@
     cellModel.selectionBlock = ^(NSIndexPath *indexPath, UITableView *table) {
         [table deselectRowAtIndexPath:indexPath animated:YES];
     };
-    [[self.table objectAtIndex:index.integerValue] addObject:cellModel];
+    [[self.table objectAtIndex:section.integerValue] addObject:cellModel];
 }
 
 @end

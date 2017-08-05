@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QFHeader.h"
+#import "QFTableModel.h"
+#import "QFWeakDefine.h"
 #import "NSObject+selector.h"
-#import "QFTableStyle.h"
 #import "QFSectionModel.h"
-#import <YYModel.h>
 
 typedef void (^QFRefreshBlock)();
 typedef void (^QFLoadMoreBlock)();

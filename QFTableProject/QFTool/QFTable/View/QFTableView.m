@@ -22,6 +22,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.tableModel = [[QFTableModel alloc] init];
+        self.tableFooterView = [UIView new];
         self.delegate = self.tableModel;
         self.dataSource = self.tableModel;
     }
@@ -65,15 +66,40 @@
 }
 
 - (void)loadView:(id)object withJson:(NSData *)json {
-    QFTableStyle *tableStyle = [QFTableStyle yy_modelWithJSON:json];
-    for (QFSectionStyle *sectionStyle in tableStyle.sections) {
-        NSUInteger section = [tableStyle.sections indexOfObject:sectionStyle];
-        [object performSelector:NSSelectorFromString(sectionStyle.selector) withObjects:nil];
-        for (NSString *cellStyle in sectionStyle.cells) {
-            NSString *selector = [NSString stringWithFormat:@"%@:",cellStyle];
-            [object performSelector:NSSelectorFromString(selector) withObjects:@[@(section)]];
-        }
+    
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:json
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:nil];
+    
+    for (NSString *url in dict[@"table"]) {
+        
+        NSString *sectionSelector = nil;
+        NSString *cellSelector = nil;
+        NSString *section = nil;
+
+        
+        NSRange symbolRange = [url rangeOfString:@"&"];
+        NSRange leftRange   = [url rangeOfString:@"<"];
+        NSRange rightRange  = [url rangeOfString:@">"];
+        
+        
+        sectionSelector = [url substringToIndex:leftRange.location];
+        cellSelector = [url substringFromIndex:symbolRange.location+symbolRange.length];
+        
+        
+        sectionSelector = [NSString stringWithFormat:@"%@:",sectionSelector];
+        cellSelector = [NSString stringWithFormat:@"%@:",cellSelector];
+        
+        
+        section = [url substringToIndex:rightRange.location];
+        section = [section substringFromIndex:leftRange.location+leftRange.length];
+        
+        
+        [object performSelector:NSSelectorFromString(sectionSelector) withObjects:@[section]];
+        [object performSelector:NSSelectorFromString(cellSelector) withObjects:@[section]];
+        
     }
+    
     //刷新列表
     [self reloadModel];
     [self endRefresh];

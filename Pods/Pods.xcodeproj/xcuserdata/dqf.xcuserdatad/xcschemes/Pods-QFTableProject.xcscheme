@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E33533E7F98AA14DC89E73611687341C'
+               BlueprintIdentifier = '80F9E0002870B84EA0CFEBD94D20B5B4'
                BlueprintName = 'Pods-QFTableProject'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-QFTableProject.a'>

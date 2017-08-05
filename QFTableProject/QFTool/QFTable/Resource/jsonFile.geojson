@@ -1,18 +1,8 @@
 {
-    "sections": [
-                 {
-                 "selector": "getSection",
-                 "cells": [
-                           "getTrackingCell",
-                           "getNetworkCell"
-                           ]
-                 },
-                 {
-                 "selector": "getSection",
-                 "cells": [
-                           "getViewCell",
-                           "getViewCell"
-                           ]
-                 }
-                 ]
+    "table": [
+              "getSection<0>&getTrackingCell",
+              "getSection<0>&getNetworkCell",
+              "getSection<1>&getViewCell",
+              "getSection<1>&getViewCell",
+              ]
 }

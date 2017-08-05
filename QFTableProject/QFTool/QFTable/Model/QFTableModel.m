@@ -28,7 +28,9 @@
 
 - (void)addObject:(QFSectionModel *)anObject {
     if ([anObject isKindOfClass:[QFSectionModel class]]) {
-        [self.sectionModelArray addObject:anObject];
+        if (![self.sectionModelArray containsObject:anObject]) {
+            [self.sectionModelArray addObject:anObject];
+        }
     }
 }
 

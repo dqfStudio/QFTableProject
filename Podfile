@@ -7,7 +7,6 @@ target 'QFTableProject' do
 
   # Pods for QFTableProject
 
-  pod “YYModel”
   pod “MJRefresh”
 
 end

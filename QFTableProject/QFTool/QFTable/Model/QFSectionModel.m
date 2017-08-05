@@ -30,7 +30,9 @@
 
 - (void)addObject:(QFCellModel *)anObject {
     if ([anObject isKindOfClass:[QFCellModel class]]) {
-        [self.cellModelArray addObject:anObject];
+        if (![self.cellModelArray containsObject:anObject]) {
+            [self.cellModelArray addObject:anObject];
+        }
     }
 }
 
