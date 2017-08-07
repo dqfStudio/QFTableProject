@@ -48,8 +48,4 @@ typedef void (^QFLoadMoreBlock)();
 
 - (void)loadView:(id)object withJson:(NSData *)json;
 
-- (void)setRefreshBlock:(QFRefreshBlock)refreshBlock;
-
-- (void)setLoadMoreBlock:(QFLoadMoreBlock)loadMoreBlock;
-
 @end
