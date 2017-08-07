@@ -16,11 +16,18 @@
 		154C65D31F34184A0060A4C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154C65D11F34184A0060A4C0 /* LaunchScreen.storyboard */; };
 		154C66241F3418860060A4C0 /* NSObject+selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C65DD1F3418850060A4C0 /* NSObject+selector.m */; };
 		154C66361F3418860060A4C0 /* QFBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C660C1F3418850060A4C0 /* QFBaseCell.m */; };
-		154C66371F3418860060A4C0 /* QFEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C660E1F3418850060A4C0 /* QFEventCell.m */; };
 		154C66381F3418860060A4C0 /* QFCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C66111F3418850060A4C0 /* QFCellModel.m */; };
 		154C66391F3418860060A4C0 /* QFSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C66141F3418850060A4C0 /* QFSectionModel.m */; };
 		154C663A1F3418860060A4C0 /* QFTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C66161F3418850060A4C0 /* QFTableModel.m */; };
 		154C663F1F3418860060A4C0 /* QFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C66231F3418860060A4C0 /* QFTableView.m */; };
+		1570E4CC1F37F3370022329A /* QFLeftImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4BD1F37F3370022329A /* QFLeftImageCell.m */; };
+		1570E4CD1F37F3370022329A /* QFLeftTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4BF1F37F3370022329A /* QFLeftTitleCell.m */; };
+		1570E4CE1F37F3370022329A /* QFLogoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4C11F37F3370022329A /* QFLogoCell.m */; };
+		1570E4CF1F37F3370022329A /* QFMiddleTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4C31F37F3370022329A /* QFMiddleTitleCell.m */; };
+		1570E4D01F37F3370022329A /* QFRightImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4C51F37F3370022329A /* QFRightImageCell.m */; };
+		1570E4D11F37F3370022329A /* QFRightTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4C71F37F3370022329A /* QFRightTitleCell.m */; };
+		1570E4D21F37F3370022329A /* QFSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4C91F37F3370022329A /* QFSwitchCell.m */; };
+		1570E4D31F37F3370022329A /* QFWhiteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4CB1F37F3370022329A /* QFWhiteCell.m */; };
 		5D40F858FBDE9471DD342B76 /* libPods-QFTableProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +47,6 @@
 		154C65DD1F3418850060A4C0 /* NSObject+selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+selector.m"; sourceTree = "<group>"; };
 		154C660B1F3418850060A4C0 /* QFBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFBaseCell.h; sourceTree = "<group>"; };
 		154C660C1F3418850060A4C0 /* QFBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFBaseCell.m; sourceTree = "<group>"; };
-		154C660D1F3418850060A4C0 /* QFEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFEventCell.h; sourceTree = "<group>"; };
-		154C660E1F3418850060A4C0 /* QFEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFEventCell.m; sourceTree = "<group>"; };
 		154C66101F3418850060A4C0 /* QFCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFCellModel.h; sourceTree = "<group>"; };
 		154C66111F3418850060A4C0 /* QFCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFCellModel.m; sourceTree = "<group>"; };
 		154C66131F3418850060A4C0 /* QFSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFSectionModel.h; sourceTree = "<group>"; };
@@ -51,6 +56,22 @@
 		154C66171F3418850060A4C0 /* QFWeakDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFWeakDefine.h; sourceTree = "<group>"; };
 		154C66221F3418860060A4C0 /* QFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTableView.h; sourceTree = "<group>"; };
 		154C66231F3418860060A4C0 /* QFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTableView.m; sourceTree = "<group>"; };
+		1570E4BC1F37F3370022329A /* QFLeftImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLeftImageCell.h; sourceTree = "<group>"; };
+		1570E4BD1F37F3370022329A /* QFLeftImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLeftImageCell.m; sourceTree = "<group>"; };
+		1570E4BE1F37F3370022329A /* QFLeftTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLeftTitleCell.h; sourceTree = "<group>"; };
+		1570E4BF1F37F3370022329A /* QFLeftTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLeftTitleCell.m; sourceTree = "<group>"; };
+		1570E4C01F37F3370022329A /* QFLogoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLogoCell.h; sourceTree = "<group>"; };
+		1570E4C11F37F3370022329A /* QFLogoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLogoCell.m; sourceTree = "<group>"; };
+		1570E4C21F37F3370022329A /* QFMiddleTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFMiddleTitleCell.h; sourceTree = "<group>"; };
+		1570E4C31F37F3370022329A /* QFMiddleTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFMiddleTitleCell.m; sourceTree = "<group>"; };
+		1570E4C41F37F3370022329A /* QFRightImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFRightImageCell.h; sourceTree = "<group>"; };
+		1570E4C51F37F3370022329A /* QFRightImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFRightImageCell.m; sourceTree = "<group>"; };
+		1570E4C61F37F3370022329A /* QFRightTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFRightTitleCell.h; sourceTree = "<group>"; };
+		1570E4C71F37F3370022329A /* QFRightTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFRightTitleCell.m; sourceTree = "<group>"; };
+		1570E4C81F37F3370022329A /* QFSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFSwitchCell.h; sourceTree = "<group>"; };
+		1570E4C91F37F3370022329A /* QFSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFSwitchCell.m; sourceTree = "<group>"; };
+		1570E4CA1F37F3370022329A /* QFWhiteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFWhiteCell.h; sourceTree = "<group>"; };
+		1570E4CB1F37F3370022329A /* QFWhiteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFWhiteCell.m; sourceTree = "<group>"; };
 		9B01B75CFD6B0755D48FD6E5 /* Pods-QFTableProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFTableProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-QFTableProject/Pods-QFTableProject.release.xcconfig"; sourceTree = "<group>"; };
 		B0EA4840998F05EF1F7BC178 /* Pods-QFTableProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFTableProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QFTableProject/Pods-QFTableProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QFTableProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,8 +174,22 @@
 			children = (
 				154C660B1F3418850060A4C0 /* QFBaseCell.h */,
 				154C660C1F3418850060A4C0 /* QFBaseCell.m */,
-				154C660D1F3418850060A4C0 /* QFEventCell.h */,
-				154C660E1F3418850060A4C0 /* QFEventCell.m */,
+				1570E4BC1F37F3370022329A /* QFLeftImageCell.h */,
+				1570E4BD1F37F3370022329A /* QFLeftImageCell.m */,
+				1570E4BE1F37F3370022329A /* QFLeftTitleCell.h */,
+				1570E4BF1F37F3370022329A /* QFLeftTitleCell.m */,
+				1570E4C01F37F3370022329A /* QFLogoCell.h */,
+				1570E4C11F37F3370022329A /* QFLogoCell.m */,
+				1570E4C21F37F3370022329A /* QFMiddleTitleCell.h */,
+				1570E4C31F37F3370022329A /* QFMiddleTitleCell.m */,
+				1570E4C41F37F3370022329A /* QFRightImageCell.h */,
+				1570E4C51F37F3370022329A /* QFRightImageCell.m */,
+				1570E4C61F37F3370022329A /* QFRightTitleCell.h */,
+				1570E4C71F37F3370022329A /* QFRightTitleCell.m */,
+				1570E4C81F37F3370022329A /* QFSwitchCell.h */,
+				1570E4C91F37F3370022329A /* QFSwitchCell.m */,
+				1570E4CA1F37F3370022329A /* QFWhiteCell.h */,
+				1570E4CB1F37F3370022329A /* QFWhiteCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -327,12 +362,19 @@
 				154C65CB1F34184A0060A4C0 /* ViewController.m in Sources */,
 				154C65C81F3418490060A4C0 /* AppDelegate.m in Sources */,
 				154C663A1F3418860060A4C0 /* QFTableModel.m in Sources */,
+				1570E4D11F37F3370022329A /* QFRightTitleCell.m in Sources */,
+				1570E4CF1F37F3370022329A /* QFMiddleTitleCell.m in Sources */,
+				1570E4D31F37F3370022329A /* QFWhiteCell.m in Sources */,
 				154C66241F3418860060A4C0 /* NSObject+selector.m in Sources */,
+				1570E4CC1F37F3370022329A /* QFLeftImageCell.m in Sources */,
+				1570E4D21F37F3370022329A /* QFSwitchCell.m in Sources */,
+				1570E4CE1F37F3370022329A /* QFLogoCell.m in Sources */,
 				154C66361F3418860060A4C0 /* QFBaseCell.m in Sources */,
 				154C663F1F3418860060A4C0 /* QFTableView.m in Sources */,
+				1570E4CD1F37F3370022329A /* QFLeftTitleCell.m in Sources */,
+				1570E4D01F37F3370022329A /* QFRightImageCell.m in Sources */,
 				154C66381F3418860060A4C0 /* QFCellModel.m in Sources */,
 				154C65C51F3418490060A4C0 /* main.m in Sources */,
-				154C66371F3418860060A4C0 /* QFEventCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

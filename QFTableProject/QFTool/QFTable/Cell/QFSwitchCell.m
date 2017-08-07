@@ -1,25 +1,24 @@
 //
-//  QFEventCell.m
+//  QFSwitchCell.m
 //  MGMobileMusic
 //
-//  Created by dqf on 2017/7/22.
+//  Created by dqf on 2017/8/4.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "QFEventCell.h"
+#import "QFSwitchCell.h"
 
-@interface QFEventCell ()
+@interface QFSwitchCell ()
 @property (nonatomic, strong) UISwitch *switchButton;
 @end
 
-@implementation QFEventCell
+@implementation QFSwitchCell
 
 KGetClassImplementation
 
 - (UISwitch *)switchButton {
     if (!_switchButton) {
         _switchButton = [[UISwitch alloc] init];
-        _switchButton.center = CGPointMake(CGRectGetWidth([UIScreen mainScreen].bounds)-CGRectGetWidth(_switchButton.frame), self.center.y);
         [_switchButton addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
     }
     return _switchButton;
@@ -29,10 +28,15 @@ KGetClassImplementation
     [self addSubview:self.switchButton];
 }
 
-- (void)switchAction:(UISwitch *)sender {  
+- (void)switchAction:(UISwitch *)sender {
     if (self.callback) {
         self.callback(sender);
     }
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.switchButton.center = CGPointMake(CGRectGetWidth(self.frame)-CGRectGetWidth(self.switchButton.frame), CGRectGetHeight(self.frame)/2);
 }
 
 @end

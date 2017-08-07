@@ -1,8 +1,8 @@
 //
-//  QFEventCell.h
+//  QFSwitchCell.h
 //  MGMobileMusic
 //
-//  Created by dqf on 2017/7/22.
+//  Created by dqf on 2017/8/4.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
@@ -10,6 +10,6 @@
 
 typedef void(^Callback)(UISwitch *sender);
 
-@interface QFEventCell : QFBaseCell
+@interface QFSwitchCell : QFBaseCell
 @property (nonatomic, strong) Callback callback;
 @end

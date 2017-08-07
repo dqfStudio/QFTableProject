@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "QFTableView.h"
-#import "QFEventCell.h"
+#import "QFSwitchCell.h"
 
 @interface ViewController ()
 
@@ -88,7 +88,7 @@
     QFCellModel *cellModel = [QFCellModel cell];
     cellModel.height = 55;
     cellModel.renderBlock = ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
-        QFEventCell *cell = [QFEventCell registerTable:table];
+        QFSwitchCell *cell = [QFSwitchCell registerTable:table];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
         cell.textLabel.text = @"路径追踪";
         cell.callback = ^(UISwitch *sender) {
@@ -105,7 +105,7 @@
     QFCellModel *cellModel = [QFCellModel cell];
     cellModel.height = 55;
     cellModel.renderBlock = ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
-        QFEventCell *cell = [QFEventCell registerTable:table];
+        QFSwitchCell *cell = [QFSwitchCell registerTable:table];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
         cell.textLabel.text = @"网络调试";
         cell.callback = ^(UISwitch *sender) {
@@ -122,7 +122,7 @@
     QFCellModel *cellModel = [QFCellModel cell];
     cellModel.height = 55;
     cellModel.renderBlock = ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
-        QFEventCell *cell = [QFEventCell registerTable:table];
+        QFSwitchCell *cell = [QFSwitchCell registerTable:table];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
         cell.textLabel.text = @"点击追踪";
         cell.callback = ^(UISwitch *sender) {
