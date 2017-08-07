@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "QFWeakDefine.h"
 #import "QFTableView.h"
 #import "QFSwitchCell.h"
 
