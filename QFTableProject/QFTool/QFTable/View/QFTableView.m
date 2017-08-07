@@ -101,6 +101,7 @@
         
         section = [url substringToIndex:rightRange.location];
         section = [section substringFromIndex:leftRange.location+leftRange.length];
+        section = [section stringByReplacingOccurrencesOfString:@" " withString:@""];
         
         
         [object performSelector:NSSelectorFromString(sectionSelector) withObjects:@[section]];
