@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150728841F39C3FE0032B905 /* QFCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 150728791F39C3FE0032B905 /* QFCellModel.m */; };
+		150728851F39C3FE0032B905 /* QFSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1507287B1F39C3FE0032B905 /* QFSectionModel.m */; };
+		150728861F39C3FE0032B905 /* QFTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1507287D1F39C3FE0032B905 /* QFTableModel.m */; };
+		150728871F39C3FE0032B905 /* NSObject+selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 150728801F39C3FE0032B905 /* NSObject+selector.m */; };
+		150728881F39C3FE0032B905 /* QFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 150728831F39C3FE0032B905 /* QFTableView.m */; };
+		1507288B1F39C4DA0032B905 /* QFBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1507288A1F39C4DA0032B905 /* QFBaseCell.m */; };
 		154C65C51F3418490060A4C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C65C41F3418490060A4C0 /* main.m */; };
 		154C65C81F3418490060A4C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C65C71F3418490060A4C0 /* AppDelegate.m */; };
 		154C65CB1F34184A0060A4C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C65CA1F34184A0060A4C0 /* ViewController.m */; };
@@ -26,6 +32,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150728781F39C3FE0032B905 /* QFCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFCellModel.h; sourceTree = "<group>"; };
+		150728791F39C3FE0032B905 /* QFCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFCellModel.m; sourceTree = "<group>"; };
+		1507287A1F39C3FE0032B905 /* QFSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFSectionModel.h; sourceTree = "<group>"; };
+		1507287B1F39C3FE0032B905 /* QFSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFSectionModel.m; sourceTree = "<group>"; };
+		1507287C1F39C3FE0032B905 /* QFTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTableModel.h; sourceTree = "<group>"; };
+		1507287D1F39C3FE0032B905 /* QFTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTableModel.m; sourceTree = "<group>"; };
+		1507287F1F39C3FE0032B905 /* NSObject+selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+selector.h"; sourceTree = "<group>"; };
+		150728801F39C3FE0032B905 /* NSObject+selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+selector.m"; sourceTree = "<group>"; };
+		150728821F39C3FE0032B905 /* QFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTableView.h; sourceTree = "<group>"; };
+		150728831F39C3FE0032B905 /* QFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTableView.m; sourceTree = "<group>"; };
+		150728891F39C4DA0032B905 /* QFBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFBaseCell.h; sourceTree = "<group>"; };
+		1507288A1F39C4DA0032B905 /* QFBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFBaseCell.m; sourceTree = "<group>"; };
 		154C65C01F3418490060A4C0 /* QFTableProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QFTableProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		154C65C41F3418490060A4C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		154C65C61F3418490060A4C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +97,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		150728761F39C3FE0032B905 /* QFTable */ = {
+			isa = PBXGroup;
+			children = (
+				150728771F39C3FE0032B905 /* Model */,
+				1507287E1F39C3FE0032B905 /* NSObject+selector */,
+				150728811F39C3FE0032B905 /* View */,
+			);
+			path = QFTable;
+			sourceTree = "<group>";
+		};
+		150728771F39C3FE0032B905 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				150728781F39C3FE0032B905 /* QFCellModel.h */,
+				150728791F39C3FE0032B905 /* QFCellModel.m */,
+				1507287A1F39C3FE0032B905 /* QFSectionModel.h */,
+				1507287B1F39C3FE0032B905 /* QFSectionModel.m */,
+				1507287C1F39C3FE0032B905 /* QFTableModel.h */,
+				1507287D1F39C3FE0032B905 /* QFTableModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1507287E1F39C3FE0032B905 /* NSObject+selector */ = {
+			isa = PBXGroup;
+			children = (
+				1507287F1F39C3FE0032B905 /* NSObject+selector.h */,
+				150728801F39C3FE0032B905 /* NSObject+selector.m */,
+			);
+			path = "NSObject+selector";
+			sourceTree = "<group>";
+		};
+		150728811F39C3FE0032B905 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				150728821F39C3FE0032B905 /* QFTableView.h */,
+				150728831F39C3FE0032B905 /* QFTableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		154C65B71F3418490060A4C0 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +159,7 @@
 		154C65C21F3418490060A4C0 /* QFTableProject */ = {
 			isa = PBXGroup;
 			children = (
+				150728761F39C3FE0032B905 /* QFTable */,
 				1570E4F71F38377E0022329A /* QFTool */,
 				154C65C61F3418490060A4C0 /* AppDelegate.h */,
 				154C65C71F3418490060A4C0 /* AppDelegate.m */,
@@ -135,6 +195,8 @@
 		1570E4F81F38377E0022329A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				150728891F39C4DA0032B905 /* QFBaseCell.h */,
+				1507288A1F39C4DA0032B905 /* QFBaseCell.m */,
 				1570E4F91F38377E0022329A /* QFLeftImageCell.h */,
 				1570E4FA1F38377E0022329A /* QFLeftImageCell.m */,
 				1570E4FB1F38377E0022329A /* QFLeftTitleCell.h */,
@@ -305,15 +367,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				154C65CB1F34184A0060A4C0 /* ViewController.m in Sources */,
+				150728851F39C3FE0032B905 /* QFSectionModel.m in Sources */,
+				150728881F39C3FE0032B905 /* QFTableView.m in Sources */,
 				1570E50C1F38377E0022329A /* QFLeftTitleCell.m in Sources */,
+				1507288B1F39C4DA0032B905 /* QFBaseCell.m in Sources */,
 				1570E50B1F38377E0022329A /* QFLeftImageCell.m in Sources */,
 				154C65C81F3418490060A4C0 /* AppDelegate.m in Sources */,
+				150728841F39C3FE0032B905 /* QFCellModel.m in Sources */,
 				1570E5111F38377E0022329A /* QFSwitchCell.m in Sources */,
 				1570E50E1F38377E0022329A /* QFMiddleTitleCell.m in Sources */,
 				1570E50F1F38377E0022329A /* QFRightImageCell.m in Sources */,
+				150728861F39C3FE0032B905 /* QFTableModel.m in Sources */,
 				1570E5121F38377E0022329A /* QFWhiteCell.m in Sources */,
 				154C65C51F3418490060A4C0 /* main.m in Sources */,
 				1570E5101F38377E0022329A /* QFRightTitleCell.m in Sources */,
+				150728871F39C3FE0032B905 /* NSObject+selector.m in Sources */,
 				1570E50D1F38377E0022329A /* QFLogoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -423,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -437,6 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q65W64YB94;
 				INFOPLIST_FILE = QFTableProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dqfStudio.QFTableProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,6 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q65W64YB94;
 				INFOPLIST_FILE = QFTableProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dqfStudio.QFTableProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
