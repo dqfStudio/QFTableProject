@@ -10,8 +10,6 @@
 
 @implementation QFLeftTitleCell
 
-KGetClassImplementation
-
 - (void)initUI {
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     self.selectionStyle = UITableViewCellSelectionStyleDefault;

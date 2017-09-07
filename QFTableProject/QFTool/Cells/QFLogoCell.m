@@ -10,8 +10,6 @@
 
 @implementation QFLogoCell
 
-KGetClassImplementation
-
 - (UIImageView *)logoView {
     if (!_logoView) {
         _logoView = [[UIImageView alloc] init];

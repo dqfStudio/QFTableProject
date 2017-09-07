@@ -14,8 +14,6 @@
 
 @implementation QFSwitchCell
 
-KGetClassImplementation
-
 - (UISwitch *)switchButton {
     if (!_switchButton) {
         _switchButton = [[UISwitch alloc] init];

@@ -10,31 +10,21 @@
 
 @implementation QFBaseCell
 
-KGetClassImplementation
-
 + (id)registerTable:(UITableView *)table {
-
-    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:NSStringFromClass([self getClass])];
-    if (!cell) {
-        cell = [[self alloc] initWithStyle:UITableViewCellStyleDefault
-                             reuseIdentifier:NSStringFromClass([self getClass])];
-    }
-    return cell;
+    return [self registerTable:table style:UITableViewCellStyleDefault];
 }
 
 + (id)registerTable:(UITableView *)table style:(UITableViewCellStyle)style {
-    
-    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:NSStringFromClass([self getClass])];
+    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:NSStringFromClass(self.class)];
     if (!cell) {
         cell = [[self alloc] initWithStyle:style
-                             reuseIdentifier:NSStringFromClass([self getClass])];
+                             reuseIdentifier:NSStringFromClass(self.class)];
     }
     return cell;
 }
 
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]){
         [self initUI];
     }

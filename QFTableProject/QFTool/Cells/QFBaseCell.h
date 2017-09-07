@@ -8,15 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define KGetClassInterface + (Class)getClass;
-
-#define KGetClassImplementation + (Class)getClass {\
-    return self.class;\
-}
-
 @interface QFBaseCell : UITableViewCell
-
-KGetClassInterface
 
 + (id)registerTable:(UITableView *)table;
 

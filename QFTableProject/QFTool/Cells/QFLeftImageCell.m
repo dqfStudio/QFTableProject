@@ -10,8 +10,6 @@
 
 @implementation QFLeftImageCell
 
-KGetClassImplementation
-
 - (void)setLeftImage:(NSString *)image {
     _leftImage = image;
     self.imageView.image = [UIImage imageNamed:image];

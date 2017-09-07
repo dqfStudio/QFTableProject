@@ -10,8 +10,6 @@
 
 @implementation QFWhiteCell
 
-KGetClassImplementation
-
 - (void)initUI {
     
 }

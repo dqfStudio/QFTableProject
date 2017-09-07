@@ -10,8 +10,6 @@
 
 @implementation QFMiddleTitleCell
 
-KGetClassImplementation
-
 - (UILabel *)middlelabel {
     if (!_middlelabel) {
         _middlelabel = [[UILabel alloc] init];

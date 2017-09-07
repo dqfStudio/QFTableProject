@@ -10,8 +10,6 @@
 
 @implementation QFRightImageCell
 
-KGetClassImplementation
-
 - (UIImageView *)rightImage {
     if (!_rightImage) {
         _rightImage = [[UIImageView alloc] init];

@@ -10,8 +10,6 @@
 
 @implementation QFRightTitleCell
 
-KGetClassImplementation
-
 - (UILabel *)rightlabel {
     if (!_rightlabel) {
         _rightlabel = [[UILabel alloc] init];
