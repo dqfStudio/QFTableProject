@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor grayColor]];
+    [self setTitle:@"main"];
     
     _table = [[QFTableView alloc] initWithFrame:self.view.frame];
     [_table setBackgroundColor:[UIColor clearColor]];
