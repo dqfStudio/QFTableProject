@@ -1,8 +1,8 @@
 {
     "table": [
-              "getSection<0>&getTrackingCell",
-              "getSection<0>&getNetworkCell",
-              "getSection<1>&getViewCell",
-              "getSection<1>&getViewCell",
+              "getSection<0>&getViewCell",
+              "getSection<0>&getViewCell",
+              "getSection<0>&getViewCell",
+              "getSection<1>&getViewCell2",
               ]
 }

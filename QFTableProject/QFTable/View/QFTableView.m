@@ -95,8 +95,17 @@
         NSString *section = tmpArr[1].replace(@" ", @"");
         NSString *cellSelector = tmpArr[2].replace(@" ", @"").append(@":");
         
-        [object performSelector:NSSelectorFromString(sectionSelector) withObjects:@[section]];
-        [object performSelector:NSSelectorFromString(cellSelector) withObjects:@[section]];
+        QFSectionModel *sectionModel = [self objectAtIndex:section.integerValue];
+        if (!sectionModel) {
+            sectionModel = [QFSectionModel new];
+            [self addModel:sectionModel];
+        }
+        
+        QFCellModel *cellModel = [QFCellModel new];
+        [sectionModel addObject:cellModel];
+        
+        [object performSelector:NSSelectorFromString(sectionSelector) withObjects:@[sectionModel]];
+        [object performSelector:NSSelectorFromString(cellSelector) withObjects:@[cellModel]];
         
     }
     

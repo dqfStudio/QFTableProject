@@ -52,20 +52,20 @@
 //    @ws
 //    self.table.refreshBlock = ^{
 //        @ss
-//        NSArray *arr = @[@"getSection<0>&getTrackingCell",
-//                         @"getSection<0>&getNetworkCell",
-//                         @"getSection<1>&getViewCell",
-//                         @"getSection<1>&getViewCell"];
+//        NSArray *arr = @[@"getSection<0>&getViewCell",
+//                         @"getSection<0>&getViewCell",
+//                         @"getSection<0>&getViewCell",
+//                         @"getSection<1>&getViewCell2"];
 //        sleep(2);
 //        [self.table refreshView:self withArr:arr];
 //    };
 //    
 //    self.table.loadMoreBlock = ^{
 //        @ss
-//        NSArray *arr = @[@"getSection<0>&getTrackingCell",
-//                         @"getSection<0>&getNetworkCell",
-//                         @"getSection<1>&getViewCell",
-//                         @"getSection<1>&getViewCell"];
+//        NSArray *arr = @[@"getSection<0>&getViewCell",
+//                         @"getSection<0>&getViewCell",
+//                         @"getSection<0>&getViewCell",
+//                         @"getSection<1>&getViewCell2"];
 //        sleep(2);
 //        [self.table loadView:self withArr:arr];
 //    };
@@ -75,65 +75,82 @@
     
 }
 
-- (void)getSection:(NSString *)section {
-    QFSectionModel *sectionModel = [self.table objectAtIndex:section.integerValue];
-    if (!sectionModel) {
-        sectionModel = [QFSectionModel section];
-        sectionModel.headerHeight = 22;
-        sectionModel.footerHeight = 1;
-        [self.table addModel:sectionModel];
-    }
+- (void)getSection:(id)sender {
+    QFSectionModel *sectionModel = sender;
+    sectionModel.headerHeight = 22;
+    sectionModel.footerHeight = 1;
 }
 
-- (void)getTrackingCell:(NSString *)section {
-    QFCellModel *cellModel = [QFCellModel cell];
+- (void)getViewCell:(id)sender {
+    QFCellModel *cellModel = sender;
     cellModel.height = 55;
-    cellModel.renderBlock = ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
+    cellModel.renderBlock = [self renderBlock];
+    cellModel.selectionBlock = [self selectionBlock];
+}
+
+- (void)getViewCell2:(id)sender {
+    QFCellModel *cellModel = sender;
+    cellModel.height = 55;
+    cellModel.renderBlock = [self renderBlock2];
+    cellModel.selectionBlock = [self selectionBlock];
+}
+
+- (QFCellRenderBlock)renderBlock {
+    return ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
+        
         QFSwitchCell *cell = [QFSwitchCell registerTable:table];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
-        cell.textLabel.text = @"路径追踪";
+        
+        switch (indexPath.row) {
+            case 0:
+            {
+                cell.textLabel.text = @"路径追踪";
+                cell.callback = ^(UISwitch *sender) {
+                };
+                return cell;
+            }
+                break;
+            case 1:
+            {
+                cell.textLabel.text = @"网络调试";
+                cell.callback = ^(UISwitch *sender) {
+                };
+                return cell;
+            }
+                break;
+            case 2:
+            {
+                cell.textLabel.text = @"点击追踪";
+                cell.callback = ^(UISwitch *sender) {
+                };
+                return cell;
+            }
+                break;
+                
+            default:
+                cell.textLabel.text = @"else";
+                return cell;
+                break;
+        }
+    };
+}
+
+- (QFCellRenderBlock)renderBlock2 {
+    return ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
+        
+        QFSwitchCell *cell = [QFSwitchCell registerTable:table];
+        [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
+        cell.textLabel.text = @"路径追踪2";
         cell.callback = ^(UISwitch *sender) {
         };
         return cell;
     };
-    cellModel.selectionBlock = ^(NSIndexPath *indexPath, UITableView *table) {
-        [table deselectRowAtIndexPath:indexPath animated:YES];
-    };
-    [[self.table objectAtIndex:section.integerValue] addObject:cellModel];
 }
 
-- (void)getNetworkCell:(NSString *)section {
-    QFCellModel *cellModel = [QFCellModel cell];
-    cellModel.height = 55;
-    cellModel.renderBlock = ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
-        QFSwitchCell *cell = [QFSwitchCell registerTable:table];
-        [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
-        cell.textLabel.text = @"网络调试";
-        cell.callback = ^(UISwitch *sender) {
-        };
-        return cell;
-    };
-    cellModel.selectionBlock = ^(NSIndexPath *indexPath, UITableView *table) {
+- (QFCellSelectionBlock)selectionBlock {
+    return ^(NSIndexPath *indexPath, UITableView *table) {
         [table deselectRowAtIndexPath:indexPath animated:YES];
     };
-    [[self.table objectAtIndex:section.integerValue] addObject:cellModel];
-}
-
-- (void)getViewCell:(NSString *)section {
-    QFCellModel *cellModel = [QFCellModel cell];
-    cellModel.height = 55;
-    cellModel.renderBlock = ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
-        QFSwitchCell *cell = [QFSwitchCell registerTable:table];
-        [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
-        cell.textLabel.text = @"点击追踪";
-        cell.callback = ^(UISwitch *sender) {
-        };
-        return cell;
-    };
-    cellModel.selectionBlock = ^(NSIndexPath *indexPath, UITableView *table) {
-        [table deselectRowAtIndexPath:indexPath animated:YES];
-    };
-    [[self.table objectAtIndex:section.integerValue] addObject:cellModel];
 }
 
 @end

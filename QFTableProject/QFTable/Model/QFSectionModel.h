@@ -26,9 +26,6 @@ typedef UIView * (^QFViewRenderBlock)(NSInteger section, UITableView *table);
 @property (nonatomic, strong) UIView *headerView;  // section header view
 @property (nonatomic, strong) UIView *footerView;  // section footer view
 
-//实例化对象
-+ (QFSectionModel *)section;
-
 //向model添加对象数据
 - (void)addObject:(QFCellModel *)anObject;
 

@@ -15,9 +15,6 @@
  */
 @interface QFTableModel : NSObject <UITableViewDelegate, UITableViewDataSource>
 
-//实例化对象
-+ (QFTableModel *)table;
-
 //向model添加对象数据
 - (void)addObject:(QFSectionModel *)anObject;
 

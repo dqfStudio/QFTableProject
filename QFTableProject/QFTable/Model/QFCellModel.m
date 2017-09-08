@@ -18,8 +18,4 @@
     return self;
 }
 
-+ (QFCellModel *)cell {
-    return [[self alloc] init];
-}
-
 @end

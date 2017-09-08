@@ -24,10 +24,6 @@
     return self;
 }
 
-+ (QFSectionModel *)section {
-    return [[self alloc] init];
-}
-
 - (void)addObject:(QFCellModel *)anObject {
     if ([anObject isKindOfClass:[QFCellModel class]]) {
         if (![self.cellModelArray containsObject:anObject]) {

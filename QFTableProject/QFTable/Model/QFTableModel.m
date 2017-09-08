@@ -22,10 +22,6 @@
     return self;
 }
 
-+ (QFTableModel *)table {
-    return [[self alloc] init];
-}
-
 - (void)addObject:(QFSectionModel *)anObject {
     if ([anObject isKindOfClass:[QFSectionModel class]]) {
         if (![self.sectionModelArray containsObject:anObject]) {

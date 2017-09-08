@@ -33,7 +33,4 @@ UITableViewCellEditingStyle editingStyle);
 @property (nonatomic, assign) UITableViewCellEditingStyle editingStyle;  // cell's editing style
 @property (nonatomic, copy) NSString *deleteConfirmationButtonTitle;  // delete confirmation title
 
-//实例化对象
-+ (QFCellModel *)cell;
-
 @end
