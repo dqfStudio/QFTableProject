@@ -36,6 +36,9 @@ typedef void (^QFLoadMoreBlock)();
 //clear all model
 - (void)clearModel;
 
+//begin refresh
+- (void)beginRefresh;
+
 //stop refresh
 - (void)endRefresh;
 

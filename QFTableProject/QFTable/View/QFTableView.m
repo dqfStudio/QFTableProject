@@ -114,6 +114,12 @@
     [self endRefresh];
 }
 
+- (void)beginRefresh {
+    if (_refreshBlock) {
+        [self.mj_header beginRefreshing];
+    }
+}
+
 - (void)setRefreshBlock:(QFRefreshBlock)refreshBlock {
     _refreshBlock = refreshBlock;
     if (_refreshBlock) {

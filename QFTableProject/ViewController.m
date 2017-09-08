@@ -41,13 +41,13 @@
         [self.table refreshView:self withJson:data];
     };
     
-    self.table.loadMoreBlock = ^{
-        @ss
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"jsonFile" ofType:@"geojson"];
-        NSData *data = [NSData dataWithContentsOfFile:filePath];
-        sleep(2);
-        [self.table loadView:self withJson:data];
-    };
+//    self.table.loadMoreBlock = ^{
+//        @ss
+//        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"jsonFile" ofType:@"geojson"];
+//        NSData *data = [NSData dataWithContentsOfFile:filePath];
+//        sleep(2);
+//        [self.table loadView:self withJson:data];
+//    };
     
 //    @ws
 //    self.table.refreshBlock = ^{
@@ -71,7 +71,7 @@
 //    };
     
     //先刷新一次数据
-    self.table.refreshBlock();
+    [self.table beginRefresh];
     
 }
 
