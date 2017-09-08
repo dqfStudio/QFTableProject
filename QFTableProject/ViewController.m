@@ -78,7 +78,6 @@
 - (void)getSection:(id)sender {
     QFSectionModel *sectionModel = sender;
     sectionModel.headerHeight = 22;
-    sectionModel.footerHeight = 1;
 }
 
 - (void)getViewCell:(id)sender {
