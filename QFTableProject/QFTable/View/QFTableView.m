@@ -60,12 +60,6 @@
     [self.tableModel clearModel];
 }
 
-//stop refresh
--(void)endRefresh {
-    [self.mj_header endRefreshing];
-    [self.mj_footer endRefreshing];
-}
-
 - (void)refreshView:(id)object withJson:(NSData *)json {
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:json
                                                          options:NSJSONReadingMutableContainers
@@ -140,6 +134,12 @@
     if (_refreshBlock) {
         [self.mj_header beginRefreshing];
     }
+}
+
+//stop refresh
+-(void)endRefresh {
+    [self.mj_header endRefreshing];
+    [self.mj_footer endRefreshing];
 }
 
 - (void)setRefreshBlock:(QFRefreshBlock)refreshBlock {
