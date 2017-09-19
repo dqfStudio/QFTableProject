@@ -7,6 +7,7 @@
 //
 
 #import "QFTableView.h"
+#import "QFBaseCell.h"
 #import "MJRefresh.h"
 
 @interface NSString (util)
@@ -104,14 +105,35 @@
         QFCellModel *cellModel = [QFCellModel new];
         [sectionModel addObject:cellModel];
         
-        [object performSelector:NSSelectorFromString(sectionSelector) withObjects:@[sectionModel]];
-        [object performSelector:NSSelectorFromString(cellSelector) withObjects:@[cellModel]];
+        if([object respondsToSelector:NSSelectorFromString(sectionSelector)]){
+            [object performSelector:NSSelectorFromString(sectionSelector) withObjects:@[sectionModel]];
+        }
+        
+        if([object respondsToSelector:NSSelectorFromString(cellSelector)]){
+            [object performSelector:NSSelectorFromString(cellSelector) withObjects:@[cellModel]];
+        }else {
+            cellModel.renderBlock = [self renderBlock];
+            cellModel.selectionBlock = [self selectionBlock];
+        }
         
     }
     
     //刷新列表
     [self reloadModel];
     [self endRefresh];
+}
+
+- (QFCellRenderBlock)renderBlock {
+    return ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
+        QFBaseCell *cell = [QFBaseCell registerTable:table];
+        return cell;
+    };
+}
+
+- (QFCellSelectionBlock)selectionBlock {
+    return ^(NSIndexPath *indexPath, UITableView *table) {
+        [table deselectRowAtIndexPath:indexPath animated:YES];
+    };
 }
 
 - (void)beginRefresh {
