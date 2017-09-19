@@ -78,15 +78,30 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
-    return cellModel.height;
+    QFCellHeightBlock heightBlock = cellModel.heightBlock;
+    if (heightBlock) {
+        return heightBlock(indexPath, tableView);
+    } else {
+        return cellModel.height;
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     QFSectionModel *sectionModel = [self sectionModelAtSection:section];
-    return sectionModel.headerHeight;
+    QFSectionHeightBlock headerHeightBlock = sectionModel.headerHeightBlock;
+    if (headerHeightBlock) {
+        return headerHeightBlock(section, tableView);
+    } else {
+        return sectionModel.headerHeight;
+    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     QFSectionModel *sectionModel = [self sectionModelAtSection:section];
-    return sectionModel.footerHeight;
+    QFSectionHeightBlock footerHeightBlock = sectionModel.footerHeightBlock;
+    if (footerHeightBlock) {
+        return footerHeightBlock(section, tableView);
+    } else {
+        return sectionModel.footerHeight;
+    }
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     QFSectionModel *sectionModel = [self sectionModelAtSection:section];

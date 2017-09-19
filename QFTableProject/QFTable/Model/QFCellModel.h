@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef CGFloat (^QFCellHeightBlock)(NSIndexPath *indexPath, UITableView *table);
 typedef UITableViewCell * (^QFCellRenderBlock)(NSIndexPath *indexPath, UITableView *table);
 typedef NSIndexPath * (^QFCellWillSelectBlock)(NSIndexPath *indexPath, UITableView *table);
 typedef void (^QFCellSelectionBlock)(NSIndexPath *indexPath, UITableView *table);
@@ -19,6 +20,7 @@ UITableViewCellEditingStyle editingStyle);
 /** Table view's row model */
 @interface QFCellModel : NSObject
 
+@property (nonatomic, copy) QFCellHeightBlock heightBlock;            // optional
 @property (nonatomic, copy) QFCellRenderBlock renderBlock;            // required
 @property (nonatomic, copy) QFCellWillDisplayBlock willDisplayBlock;  // optional
 @property (nonatomic, copy) QFCellWillSelectBlock willSelectBlock;    // optional

@@ -9,6 +9,7 @@
 #import "QFCellModel.h"
 
 typedef UIView * (^QFViewRenderBlock)(NSInteger section, UITableView *table);
+typedef CGFloat (^QFSectionHeightBlock)(NSInteger section, UITableView *table);
 
 /** Table view's section model */
 @interface QFSectionModel : NSObject
@@ -21,6 +22,8 @@ typedef UIView * (^QFViewRenderBlock)(NSInteger section, UITableView *table);
 
 // view render blocks' priority is higher then view property.
 // if headerViewRenderBlock and headerView are both provided, headerViewRenderBlock will be used
+@property (nonatomic, copy) QFSectionHeightBlock headerHeightBlock;  // block to header height
+@property (nonatomic, copy) QFSectionHeightBlock footerHeightBlock;  // block to footer height
 @property (nonatomic, copy) QFViewRenderBlock headerViewRenderBlock;  // block to render header view
 @property (nonatomic, copy) QFViewRenderBlock footerViewRenderBlock;  // block to render footer view
 @property (nonatomic, strong) UIView *headerView;  // section header view
