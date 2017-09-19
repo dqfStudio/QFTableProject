@@ -53,20 +53,20 @@
 //    @ws
 //    self.table.refreshBlock = ^{
 //        @ss
-//        NSArray *arr = @[@"getSection<0>&getViewCell",
-//                         @"getSection<0>&getViewCell",
-//                         @"getSection<0>&getViewCell",
-//                         @"getSection<1>&getViewCell2"];
+//        NSArray *arr = @[@"sectionModel<0>&cellModel",
+//                         @"sectionModel<0>&cellModel",
+//                         @"sectionModel<0>&cellModel",
+//                         @"sectionModel<1>&cellModel2"];
 //        sleep(2);
 //        [self.table refreshView:self withArr:arr];
 //    };
 //    
 //    self.table.loadMoreBlock = ^{
 //        @ss
-//        NSArray *arr = @[@"getSection<0>&getViewCell",
-//                         @"getSection<0>&getViewCell",
-//                         @"getSection<0>&getViewCell",
-//                         @"getSection<1>&getViewCell2"];
+//        NSArray *arr = @[@"sectionModel<0>&cellModel",
+//                         @"sectionModel<0>&cellModel",
+//                         @"sectionModel<0>&cellModel",
+//                         @"sectionModel<1>&cellModel2"];
 //        sleep(2);
 //        [self.table loadView:self withArr:arr];
 //    };
@@ -76,19 +76,19 @@
     
 }
 
-- (void)getSection:(id)sender {
+- (void)sectionModel:(id)sender {
     QFSectionModel *sectionModel = sender;
     sectionModel.headerHeight = 22;
 }
 
-- (void)getViewCell:(id)sender {
+- (void)cellModel:(id)sender {
     QFCellModel *cellModel = sender;
     cellModel.height = 55;
     cellModel.renderBlock = [self renderBlock];
     cellModel.selectionBlock = [self selectionBlock];
 }
 
-- (void)getViewCell2:(id)sender {
+- (void)cellModel2:(id)sender {
     QFCellModel *cellModel = sender;
     cellModel.height = 55;
     cellModel.renderBlock = [self renderBlock2];
