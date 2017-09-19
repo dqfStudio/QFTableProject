@@ -53,20 +53,20 @@
 //    @ws
 //    self.table.refreshBlock = ^{
 //        @ss
-//        NSArray *arr = @[@"sectionModel<0>&cellModel",
-//                         @"sectionModel<0>&cellModel",
-//                         @"sectionModel<0>&cellModel",
-//                         @"sectionModel<1>&cellModel2"];
+//        NSArray *arr = @[@"sectionModel<0>cellModel",
+//                         @"sectionModel<0>cellModel",
+//                         @"sectionModel<0>cellModel",
+//                         @"sectionModel<1>cellModel2"];
 //        sleep(2);
 //        [self.table refreshView:self withArr:arr];
 //    };
 //    
 //    self.table.loadMoreBlock = ^{
 //        @ss
-//        NSArray *arr = @[@"sectionModel<0>&cellModel",
-//                         @"sectionModel<0>&cellModel",
-//                         @"sectionModel<0>&cellModel",
-//                         @"sectionModel<1>&cellModel2"];
+//        NSArray *arr = @[@"sectionModel<0>cellModel",
+//                         @"sectionModel<0>cellModel",
+//                         @"sectionModel<0>cellModel",
+//                         @"sectionModel<1>cellModel2"];
 //        sleep(2);
 //        [self.table loadView:self withArr:arr];
 //    };

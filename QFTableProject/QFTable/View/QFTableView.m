@@ -90,7 +90,7 @@
     
     for (NSString *url in arr) {
         
-        NSArray<NSString *> *tmpArr = url.componentsBySetString(@"<>&");
+        NSArray<NSString *> *tmpArr = url.componentsBySetString(@"<>");
         
         NSString *sectionSelector = tmpArr[0].replace(@" ", @"").append(@":");
         NSString *section = tmpArr[1].replace(@" ", @"");
