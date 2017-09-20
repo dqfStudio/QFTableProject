@@ -3,7 +3,7 @@
 //  QFTableProject
 //
 //  Created by dqf on 2017/8/4.
-//  Copyright © 2017年 dqfStudio. All rights reserved.
+//  Copyright © 2017年 migu. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -103,35 +103,23 @@
         
         switch (indexPath.row) {
             case 0:
-            {
                 cell.textLabel.text = @"路径追踪";
-                cell.callback = ^(UISwitch *sender) {
-                };
-                return cell;
-            }
+                cell.callback = ^(UISwitch *sender) {};
                 break;
             case 1:
-            {
                 cell.textLabel.text = @"网络调试";
-                cell.callback = ^(UISwitch *sender) {
-                };
-                return cell;
-            }
+                cell.callback = ^(UISwitch *sender) {};
                 break;
             case 2:
-            {
                 cell.textLabel.text = @"点击追踪";
-                cell.callback = ^(UISwitch *sender) {
-                };
-                return cell;
-            }
+                cell.callback = ^(UISwitch *sender) {};
                 break;
                 
             default:
                 cell.textLabel.text = @"else";
-                return cell;
                 break;
         }
+        return cell;
     };
 }
 
@@ -141,8 +129,7 @@
         QFSwitchCell *cell = [QFSwitchCell registerTable:table];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
         cell.textLabel.text = @"路径追踪2";
-        cell.callback = ^(UISwitch *sender) {
-        };
+        cell.callback = ^(UISwitch *sender) {};
         return cell;
     };
 }
