@@ -11,17 +11,12 @@
 #import "MJRefresh.h"
 
 @interface NSString (util)
-
 - (NSString *(^)(id))append;
-- (NSString *(^)(NSString *, NSString *))replace;
 - (NSArray<NSString *> *(^)(NSString *))componentsBySetString;
-
 @end
 
 @interface QFTableView ()
-
 @property (nonatomic, strong) QFTableModel *tableModel;
-
 @end
 
 @implementation QFTableView
@@ -96,9 +91,9 @@
         
         NSArray<NSString *> *tmpArr = url.componentsBySetString(@"<>");
         
-        NSString *sectionSelector = tmpArr[0].replace(@" ", @"").append(@":");
-        NSString *section = tmpArr[1].replace(@" ", @"");
-        NSString *cellSelector = tmpArr[2].replace(@" ", @"").append(@":");
+        NSString *sectionSelector = tmpArr[0].append(@":");
+        NSString *section = tmpArr[1];
+        NSString *cellSelector = tmpArr[2].append(@":");
         
         QFSectionModel *sectionModel = [self objectAtIndex:section.integerValue];
         if (!sectionModel) {
@@ -177,33 +172,29 @@
 @end
 
 @implementation NSString (util)
-
 - (NSString *(^)(id))append {
     return ^NSString *(id obj) {
         return [NSString stringWithFormat:@"%@%@", self,obj];
     };
 }
-
-- (NSString *(^)(NSString *, NSString *))replace {
-    return ^NSString *(NSString *org1, NSString *org2) {
-        return [self stringByReplacingOccurrencesOfString:org1 withString:org2];
-    };
-}
-
 - (NSArray<NSString *> *(^)(NSString *))componentsBySetString {
     return ^NSArray<NSString *> *(NSString *separator) {
         NSCharacterSet *characterSet = [NSCharacterSet characterSetWithCharactersInString:separator];
+        NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
         NSArray *arr = [self componentsSeparatedByCharactersInSet:characterSet];
         NSMutableArray *mutablerArr = [NSMutableArray new];
         //过滤掉为空的字符串
         for (int i=0; i<arr.count; i++) {
             NSString *str = arr[i];
             if (str.length > 0) {
-                [mutablerArr addObject:str];
+                //过滤掉字符串两端为空的字符
+                NSString *trimStr = [str stringByTrimmingCharactersInSet:charSet];
+                if (trimStr.length > 0) {
+                    [mutablerArr addObject:trimStr];
+                }
             }
         }
         return mutablerArr;
     };
 }
-
 @end
