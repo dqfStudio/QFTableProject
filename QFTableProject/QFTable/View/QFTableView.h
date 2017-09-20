@@ -31,6 +31,8 @@ typedef void (^QFLoadMoreBlock)();
 
 - (NSUInteger)indexOfObject:(QFSectionModel *)anObject;
 
+- (QFCellModel *)objectAtIndexPath:(NSIndexPath *)indexPath;
+
 - (void)reloadModel;
 
 //clear all model

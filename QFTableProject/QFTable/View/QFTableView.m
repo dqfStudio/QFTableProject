@@ -60,6 +60,11 @@
     return [self.tableModel indexOfObject:anObject];
 }
 
+- (QFCellModel *)objectAtIndexPath:(NSIndexPath *)indexPath {
+    QFSectionModel *sectionModel = [self objectAtIndex:indexPath.section];
+    return [sectionModel objectAtIndex:indexPath.row];
+}
+
 - (void)reloadModel {
     NSArray *arr = nil;
     if (self.sourceArray.count > 0) {
