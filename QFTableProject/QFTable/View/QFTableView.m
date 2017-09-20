@@ -16,7 +16,9 @@
 @end
 
 @interface QFTableView ()
+@property (nonatomic, weak)   id objc;
 @property (nonatomic, strong) QFTableModel *tableModel;
+@property (nonatomic, strong) NSMutableArray *sourceArray;
 @end
 
 @implementation QFTableView
@@ -25,6 +27,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.tableModel = [[QFTableModel alloc] init];
+        self.sourceArray = [NSMutableArray array];
         self.tableFooterView = [UIView new];
         self.delegate = self.tableModel;
         self.dataSource = self.tableModel;
@@ -36,6 +39,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.tableModel = [[QFTableModel alloc] init];
+        self.sourceArray = [NSMutableArray array];
         self.tableFooterView = [UIView new];
         self.delegate = self.tableModel;
         self.dataSource = self.tableModel;
@@ -57,11 +61,19 @@
 }
 
 - (void)reloadModel {
-    [self reloadData];;
+    NSArray *arr = nil;
+    if (self.sourceArray.count > 0) {
+        arr = [self.sourceArray mutableCopy];
+    }
+    [self clearModel];
+    [self loadView:self.objc withArr:arr];
 }
 
 //clear all model
 - (void)clearModel {
+    if (self.sourceArray.count > 0) {
+        [self.sourceArray removeAllObjects];
+    }
     [self.tableModel clearModel];
 }
 
@@ -86,6 +98,11 @@
 }
 
 - (void)loadView:(id)object withArr:(NSArray *)arr {
+    
+    self.objc = object;
+    if (arr.count > 0) {
+        [self.sourceArray addObjectsFromArray:arr];
+    }
     
     for (NSString *url in arr) {
         
@@ -114,11 +131,11 @@
             cellModel.renderBlock = [self renderBlock];
             cellModel.selectionBlock = [self selectionBlock];
         }
-        
+
     }
     
     //刷新列表
-    [self reloadModel];
+    [self reloadData];
     [self endRefresh];
 }
 
