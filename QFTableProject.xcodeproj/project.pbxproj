@@ -20,13 +20,9 @@
 		154C65D01F34184A0060A4C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154C65CF1F34184A0060A4C0 /* Assets.xcassets */; };
 		154C65D31F34184A0060A4C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154C65D11F34184A0060A4C0 /* LaunchScreen.storyboard */; };
 		1570E50B1F38377E0022329A /* QFLeftImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4FA1F38377E0022329A /* QFLeftImageCell.m */; };
-		1570E50C1F38377E0022329A /* QFLeftTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4FC1F38377E0022329A /* QFLeftTitleCell.m */; };
 		1570E50D1F38377E0022329A /* QFLogoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E4FE1F38377E0022329A /* QFLogoCell.m */; };
-		1570E50E1F38377E0022329A /* QFMiddleTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5001F38377E0022329A /* QFMiddleTitleCell.m */; };
 		1570E50F1F38377E0022329A /* QFRightImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5021F38377E0022329A /* QFRightImageCell.m */; };
-		1570E5101F38377E0022329A /* QFRightTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5041F38377E0022329A /* QFRightTitleCell.m */; };
 		1570E5111F38377E0022329A /* QFSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5061F38377E0022329A /* QFSwitchCell.m */; };
-		1570E5121F38377E0022329A /* QFWhiteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5081F38377E0022329A /* QFWhiteCell.m */; };
 		1570E5131F38377E0022329A /* jsonFile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 1570E50A1F38377E0022329A /* jsonFile.geojson */; };
 		5D40F858FBDE9471DD342B76 /* libPods-QFTableProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */; };
 /* End PBXBuildFile section */
@@ -56,20 +52,12 @@
 		154C65D41F34184A0060A4C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1570E4F91F38377E0022329A /* QFLeftImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLeftImageCell.h; sourceTree = "<group>"; };
 		1570E4FA1F38377E0022329A /* QFLeftImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLeftImageCell.m; sourceTree = "<group>"; };
-		1570E4FB1F38377E0022329A /* QFLeftTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLeftTitleCell.h; sourceTree = "<group>"; };
-		1570E4FC1F38377E0022329A /* QFLeftTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLeftTitleCell.m; sourceTree = "<group>"; };
 		1570E4FD1F38377E0022329A /* QFLogoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFLogoCell.h; sourceTree = "<group>"; };
 		1570E4FE1F38377E0022329A /* QFLogoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFLogoCell.m; sourceTree = "<group>"; };
-		1570E4FF1F38377E0022329A /* QFMiddleTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFMiddleTitleCell.h; sourceTree = "<group>"; };
-		1570E5001F38377E0022329A /* QFMiddleTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFMiddleTitleCell.m; sourceTree = "<group>"; };
 		1570E5011F38377E0022329A /* QFRightImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFRightImageCell.h; sourceTree = "<group>"; };
 		1570E5021F38377E0022329A /* QFRightImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFRightImageCell.m; sourceTree = "<group>"; };
-		1570E5031F38377E0022329A /* QFRightTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFRightTitleCell.h; sourceTree = "<group>"; };
-		1570E5041F38377E0022329A /* QFRightTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFRightTitleCell.m; sourceTree = "<group>"; };
 		1570E5051F38377E0022329A /* QFSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFSwitchCell.h; sourceTree = "<group>"; };
 		1570E5061F38377E0022329A /* QFSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFSwitchCell.m; sourceTree = "<group>"; };
-		1570E5071F38377E0022329A /* QFWhiteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFWhiteCell.h; sourceTree = "<group>"; };
-		1570E5081F38377E0022329A /* QFWhiteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFWhiteCell.m; sourceTree = "<group>"; };
 		1570E50A1F38377E0022329A /* jsonFile.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonFile.geojson; sourceTree = "<group>"; };
 		1570E52E1F383CEA0022329A /* QFWeakDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFWeakDefine.h; sourceTree = "<group>"; };
 		9B01B75CFD6B0755D48FD6E5 /* Pods-QFTableProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFTableProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-QFTableProject/Pods-QFTableProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,20 +187,12 @@
 				1507288A1F39C4DA0032B905 /* QFBaseCell.m */,
 				1570E4F91F38377E0022329A /* QFLeftImageCell.h */,
 				1570E4FA1F38377E0022329A /* QFLeftImageCell.m */,
-				1570E4FB1F38377E0022329A /* QFLeftTitleCell.h */,
-				1570E4FC1F38377E0022329A /* QFLeftTitleCell.m */,
 				1570E4FD1F38377E0022329A /* QFLogoCell.h */,
 				1570E4FE1F38377E0022329A /* QFLogoCell.m */,
-				1570E4FF1F38377E0022329A /* QFMiddleTitleCell.h */,
-				1570E5001F38377E0022329A /* QFMiddleTitleCell.m */,
 				1570E5011F38377E0022329A /* QFRightImageCell.h */,
 				1570E5021F38377E0022329A /* QFRightImageCell.m */,
-				1570E5031F38377E0022329A /* QFRightTitleCell.h */,
-				1570E5041F38377E0022329A /* QFRightTitleCell.m */,
 				1570E5051F38377E0022329A /* QFSwitchCell.h */,
 				1570E5061F38377E0022329A /* QFSwitchCell.m */,
-				1570E5071F38377E0022329A /* QFWhiteCell.h */,
-				1570E5081F38377E0022329A /* QFWhiteCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -369,18 +349,14 @@
 				154C65CB1F34184A0060A4C0 /* ViewController.m in Sources */,
 				150728851F39C3FE0032B905 /* QFSectionModel.m in Sources */,
 				150728881F39C3FE0032B905 /* QFTableView.m in Sources */,
-				1570E50C1F38377E0022329A /* QFLeftTitleCell.m in Sources */,
 				1507288B1F39C4DA0032B905 /* QFBaseCell.m in Sources */,
 				1570E50B1F38377E0022329A /* QFLeftImageCell.m in Sources */,
 				154C65C81F3418490060A4C0 /* AppDelegate.m in Sources */,
 				150728841F39C3FE0032B905 /* QFCellModel.m in Sources */,
 				1570E5111F38377E0022329A /* QFSwitchCell.m in Sources */,
-				1570E50E1F38377E0022329A /* QFMiddleTitleCell.m in Sources */,
 				1570E50F1F38377E0022329A /* QFRightImageCell.m in Sources */,
 				150728861F39C3FE0032B905 /* QFTableModel.m in Sources */,
-				1570E5121F38377E0022329A /* QFWhiteCell.m in Sources */,
 				154C65C51F3418490060A4C0 /* main.m in Sources */,
-				1570E5101F38377E0022329A /* QFRightTitleCell.m in Sources */,
 				150728871F39C3FE0032B905 /* NSObject+selector.m in Sources */,
 				1570E50D1F38377E0022329A /* QFLogoCell.m in Sources */,
 			);
