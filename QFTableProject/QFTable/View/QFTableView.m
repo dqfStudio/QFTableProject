@@ -26,9 +26,19 @@
 
 @implementation QFTableView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
+    if (self) {
+        self.tableModel = [[QFTableModel alloc] init];
+        self.tableFooterView = [UIView new];
+        self.delegate = self.tableModel;
+        self.dataSource = self.tableModel;
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     if (self) {
         self.tableModel = [[QFTableModel alloc] init];
         self.tableFooterView = [UIView new];
