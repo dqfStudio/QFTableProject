@@ -33,8 +33,6 @@ typedef void (^QFLoadMoreBlock)();
 
 - (void)reloadModel;
 
-- (void)dispatch_reload_after:(dispatch_time_t)when;
-
 //clear all model
 - (void)clearModel;
 
