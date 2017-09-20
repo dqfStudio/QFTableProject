@@ -49,20 +49,25 @@
 
 //add QFSectionModel
 - (void)addModel:(QFSectionModel*)anObject {
-    [self.tableModel addObject:anObject];
+    [self.tableModel addModel:anObject];
 }
 
-- (QFSectionModel *)objectAtIndex:(NSUInteger)index {
-    return [self.tableModel objectAtIndex:index];
+- (QFSectionModel *)sectionAtIndex:(NSUInteger)index {
+    return [self.tableModel sectionAtIndex:index];
 }
 
-- (NSUInteger)indexOfObject:(QFSectionModel *)anObject {
-    return [self.tableModel indexOfObject:anObject];
+- (NSUInteger)indexOfSection:(QFSectionModel *)anObject {
+    return [self.tableModel indexOfSection:anObject];
 }
 
-- (QFCellModel *)objectAtIndexPath:(NSIndexPath *)indexPath {
-    QFSectionModel *sectionModel = [self objectAtIndex:indexPath.section];
-    return [sectionModel objectAtIndex:indexPath.row];
+- (QFCellModel *)cellAtIndexPath:(NSIndexPath *)indexPath {
+    QFSectionModel *sectionModel = [self sectionAtIndex:indexPath.section];
+    return [sectionModel cellAtIndex:indexPath.row];
+}
+
+- (void)cellAtIndexPath:(NSIndexPath *)indexPath resetHeight:(NSInteger)height {
+    QFCellModel *cellModel = [self cellAtIndexPath:indexPath];;
+    cellModel.height = height;
 }
 
 - (void)reloadModel {
@@ -104,7 +109,9 @@
 
 - (void)loadView:(id)object withArr:(NSArray *)arr {
     
-    self.objc = object;
+    if (self.objc != object) {
+        self.objc = object;
+    }
     if (arr.count > 0) {
         [self.sourceArray addObjectsFromArray:arr];
     }
@@ -117,14 +124,14 @@
         NSString *section = tmpArr[1];
         NSString *cellSelector = tmpArr[2].append(@":");
         
-        QFSectionModel *sectionModel = [self objectAtIndex:section.integerValue];
+        QFSectionModel *sectionModel = [self sectionAtIndex:section.integerValue];
         if (!sectionModel) {
             sectionModel = [QFSectionModel new];
             [self addModel:sectionModel];
         }
         
         QFCellModel *cellModel = [QFCellModel new];
-        [sectionModel addObject:cellModel];
+        [sectionModel addModel:cellModel];
         
         if([object respondsToSelector:NSSelectorFromString(sectionSelector)]){
             [object performSelector:NSSelectorFromString(sectionSelector) withObjects:@[sectionModel]];

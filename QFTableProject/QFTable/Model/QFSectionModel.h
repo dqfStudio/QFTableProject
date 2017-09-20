@@ -30,11 +30,11 @@ typedef CGFloat (^QFSectionHeightBlock)(NSInteger section, UITableView *table);
 @property (nonatomic, strong) UIView *footerView;  // section footer view
 
 //向model添加对象数据
-- (void)addObject:(QFCellModel *)anObject;
+- (void)addModel:(QFCellModel *)anObject;
 
-- (QFCellModel *)objectAtIndex:(NSUInteger)index;
+- (QFCellModel *)cellAtIndex:(NSUInteger)index;
 
-- (NSUInteger)indexOfObject:(QFCellModel *)anObject;
+- (NSUInteger)indexOfCell:(QFCellModel *)anObject;
 
 - (NSUInteger)cells;
 

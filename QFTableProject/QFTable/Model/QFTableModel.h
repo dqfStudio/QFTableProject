@@ -16,11 +16,11 @@
 @interface QFTableModel : NSObject <UITableViewDelegate, UITableViewDataSource>
 
 //向model添加对象数据
-- (void)addObject:(QFSectionModel *)anObject;
+- (void)addModel:(QFSectionModel *)anObject;
 
-- (QFSectionModel *)objectAtIndex:(NSUInteger)index;
+- (QFSectionModel *)sectionAtIndex:(NSUInteger)index;
 
-- (NSUInteger)indexOfObject:(QFSectionModel *)anObject;
+- (NSUInteger)indexOfSection:(QFSectionModel *)anObject;
 
 - (NSUInteger)sections;
 

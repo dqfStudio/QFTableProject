@@ -27,11 +27,13 @@ typedef void (^QFLoadMoreBlock)();
 //add QFSectionModel
 - (void)addModel:(QFSectionModel*)anObject;
 
-- (QFSectionModel *)objectAtIndex:(NSUInteger)index;
+- (QFSectionModel *)sectionAtIndex:(NSUInteger)index;
 
-- (NSUInteger)indexOfObject:(QFSectionModel *)anObject;
+- (NSUInteger)indexOfSection:(QFSectionModel *)anObject;
 
-- (QFCellModel *)objectAtIndexPath:(NSIndexPath *)indexPath;
+- (QFCellModel *)cellAtIndexPath:(NSIndexPath *)indexPath;
+
+- (void)cellAtIndexPath:(NSIndexPath *)indexPath resetHeight:(NSInteger)height;
 
 - (void)reloadModel;
 

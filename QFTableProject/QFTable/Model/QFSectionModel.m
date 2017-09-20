@@ -24,7 +24,7 @@
     return self;
 }
 
-- (void)addObject:(QFCellModel *)anObject {
+- (void)addModel:(QFCellModel *)anObject {
     if ([anObject isKindOfClass:[QFCellModel class]]) {
         if (![self.cellModelArray containsObject:anObject]) {
             [self.cellModelArray addObject:anObject];
@@ -32,14 +32,14 @@
     }
 }
 
-- (QFCellModel *)objectAtIndex:(NSUInteger)index {
+- (QFCellModel *)cellAtIndex:(NSUInteger)index {
     if (index < self.cellModelArray.count) {
         return self.cellModelArray[index];
     }
     return nil;
 }
 
-- (NSUInteger)indexOfObject:(QFCellModel *)anObject {
+- (NSUInteger)indexOfCell:(QFCellModel *)anObject {
     if ([anObject isKindOfClass:[QFCellModel class]]) {
         return [self.cellModelArray indexOfObject:anObject];
     }
