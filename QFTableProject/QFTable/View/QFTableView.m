@@ -69,6 +69,14 @@
     [self loadView:self.objc withArr:arr];
 }
 
+- (void)dispatch_reload_after:(dispatch_time_t)when {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(when * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self reloadModel];
+        });
+    });
+}
+
 //clear all model
 - (void)clearModel {
     if (self.sourceArray.count > 0) {
