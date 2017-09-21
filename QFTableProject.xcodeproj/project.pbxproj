@@ -24,6 +24,7 @@
 		1570E50F1F38377E0022329A /* QFRightImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5021F38377E0022329A /* QFRightImageCell.m */; };
 		1570E5111F38377E0022329A /* QFSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5061F38377E0022329A /* QFSwitchCell.m */; };
 		1570E5131F38377E0022329A /* jsonFile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 1570E50A1F38377E0022329A /* jsonFile.geojson */; };
+		15F497441F73755E005F7F68 /* QFCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F497431F73755E005F7F68 /* QFCustomCell.m */; };
 		5D40F858FBDE9471DD342B76 /* libPods-QFTableProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		1570E5061F38377E0022329A /* QFSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFSwitchCell.m; sourceTree = "<group>"; };
 		1570E50A1F38377E0022329A /* jsonFile.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonFile.geojson; sourceTree = "<group>"; };
 		1570E52E1F383CEA0022329A /* QFWeakDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFWeakDefine.h; sourceTree = "<group>"; };
+		15F497421F73755E005F7F68 /* QFCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFCustomCell.h; sourceTree = "<group>"; };
+		15F497431F73755E005F7F68 /* QFCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFCustomCell.m; sourceTree = "<group>"; };
 		9B01B75CFD6B0755D48FD6E5 /* Pods-QFTableProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFTableProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-QFTableProject/Pods-QFTableProject.release.xcconfig"; sourceTree = "<group>"; };
 		B0EA4840998F05EF1F7BC178 /* Pods-QFTableProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFTableProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QFTableProject/Pods-QFTableProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QFTableProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +192,8 @@
 				1570E4FA1F38377E0022329A /* QFLeftImageCell.m */,
 				1570E4FD1F38377E0022329A /* QFLogoCell.h */,
 				1570E4FE1F38377E0022329A /* QFLogoCell.m */,
+				15F497421F73755E005F7F68 /* QFCustomCell.h */,
+				15F497431F73755E005F7F68 /* QFCustomCell.m */,
 				1570E5011F38377E0022329A /* QFRightImageCell.h */,
 				1570E5021F38377E0022329A /* QFRightImageCell.m */,
 				1570E5051F38377E0022329A /* QFSwitchCell.h */,
@@ -355,6 +360,7 @@
 				150728841F39C3FE0032B905 /* QFCellModel.m in Sources */,
 				1570E5111F38377E0022329A /* QFSwitchCell.m in Sources */,
 				1570E50F1F38377E0022329A /* QFRightImageCell.m in Sources */,
+				15F497441F73755E005F7F68 /* QFCustomCell.m in Sources */,
 				150728861F39C3FE0032B905 /* QFTableModel.m in Sources */,
 				154C65C51F3418490060A4C0 /* main.m in Sources */,
 				150728871F39C3FE0032B905 /* NSObject+selector.m in Sources */,
