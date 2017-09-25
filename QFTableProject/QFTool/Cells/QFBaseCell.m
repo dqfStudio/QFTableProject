@@ -11,12 +11,25 @@
 @implementation QFBaseCell
 
 + (id)registerTable:(UITableView *)table {
-    return [self registerTable:table style:UITableViewCellStyleDefault];
+    return [self registerTable:table initBlock:nil];
+}
+
++ (id)registerTable:(UITableView *)table initBlock:(QFCellInitBlock)block {
+    return [self registerTable:table style:UITableViewCellStyleDefault initBlock:nil];
 }
 
 + (id)registerTable:(UITableView *)table style:(UITableViewCellStyle)style {
+    return [self registerTable:table style:style initBlock:nil];
+}
+
++ (id)registerTable:(UITableView *)table style:(UITableViewCellStyle)style initBlock:(QFCellInitBlock)block {
     UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:NSStringFromClass(self.class)];
-    if (!cell) cell = [[self alloc] initWithStyle:style reuseIdentifier:NSStringFromClass(self.class)];
+    if (!cell) {
+        cell = [[self alloc] initWithStyle:style reuseIdentifier:NSStringFromClass(self.class)];
+        if (block) {
+            block(cell);
+        }
+    }
     return cell;
 }
 

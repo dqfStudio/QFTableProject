@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^QFCellInitBlock)(id cell);
+
 @interface QFBaseCell : UITableViewCell
 
 + (id)registerTable:(UITableView *)table;
++ (id)registerTable:(UITableView *)table initBlock:(QFCellInitBlock)block;
 
 + (id)registerTable:(UITableView *)table style:(UITableViewCellStyle)style;
++ (id)registerTable:(UITableView *)table style:(UITableViewCellStyle)style initBlock:(QFCellInitBlock)block;
 
 //子类覆盖
 - (void)initUI;
