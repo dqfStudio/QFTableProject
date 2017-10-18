@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EC9FBA3BF1FDB9D5F06ECB811D8A314071A03D4A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E77ABFFCD9B250C025AAB357EBCDCE9BF2A42727" : 9223372036854775807,
+    "EC9FBA3BF1FDB9D5F06ECB811D8A314071A03D4A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ED52941A-18CB-4A30-8747-3AB0FFC7C323",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E77ABFFCD9B250C025AAB357EBCDCE9BF2A42727" : "QFTableProject\/QFTableProject\/QFTable\/UILabel+QFUtil\/",
+    "EC9FBA3BF1FDB9D5F06ECB811D8A314071A03D4A" : "QFTableProject\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "QFTableProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "QFTableProject.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dqfStudio\/UILabel-QFUtil.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E77ABFFCD9B250C025AAB357EBCDCE9BF2A42727"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dqfStudio\/QFTableProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EC9FBA3BF1FDB9D5F06ECB811D8A314071A03D4A"
+    }
+  ]
+}
