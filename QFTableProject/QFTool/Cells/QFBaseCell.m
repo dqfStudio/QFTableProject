@@ -15,7 +15,7 @@
 }
 
 + (id)registerTable:(UITableView *)table initBlock:(QFCellInitBlock)block {
-    return [self registerTable:table style:UITableViewCellStyleDefault initBlock:nil];
+    return [self registerTable:table style:UITableViewCellStyleDefault initBlock:block];
 }
 
 + (id)registerTable:(UITableView *)table style:(UITableViewCellStyle)style {
