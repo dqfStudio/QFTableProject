@@ -110,6 +110,8 @@
 //clear all model
 - (void)clearModel {
     [self.tableModel clearModel];
+    //刷新列表
+    [self reloadData];
 }
 
 - (void)refreshView:(id)object withJson:(NSData *)json {
