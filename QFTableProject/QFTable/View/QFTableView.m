@@ -90,14 +90,15 @@
             if([self.objc respondsToSelector:sel]){
                 [self.objc performSelector:sel withObjects:@[sectionModel]];
             }
-        }
-        for (int j=0; j<[sectionModel cells]; j++) {
-            QFCellModel *cellModel = [sectionModel cellAtIndex:j];
-            NSString *cellSelector = sectionModel.selector;
-            if (cellSelector.length > 0 && cellModel) {
-                SEL sel = NSSelectorFromString(cellModel.selector);
-                if([self.objc respondsToSelector:sel]){
-                    [self.objc performSelector:sel withObjects:@[cellModel]];
+            
+            for (int j=0; j<[sectionModel cells]; j++) {
+                QFCellModel *cellModel = [sectionModel cellAtIndex:j];
+                NSString *cellSelector = sectionModel.selector;
+                if (cellSelector.length > 0 && cellModel) {
+                    SEL sel = NSSelectorFromString(cellModel.selector);
+                    if([self.objc respondsToSelector:sel]){
+                        [self.objc performSelector:sel withObjects:@[cellModel]];
+                    }
                 }
             }
         }
