@@ -26,6 +26,7 @@
     UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:NSStringFromClass(self.class)];
     if (!cell) {
         cell = [[self alloc] initWithStyle:style reuseIdentifier:NSStringFromClass(self.class)];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (block) {
             block(cell);
         }
