@@ -25,7 +25,6 @@
 		1570E5111F38377E0022329A /* QFSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5061F38377E0022329A /* QFSwitchCell.m */; };
 		1570E5131F38377E0022329A /* jsonFile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 1570E50A1F38377E0022329A /* jsonFile.geojson */; };
 		15F497441F73755E005F7F68 /* QFCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F497431F73755E005F7F68 /* QFCustomCell.m */; };
-		15F498891F79D420005F7F68 /* UILabel+QFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F498881F79D420005F7F68 /* UILabel+QFUtil.m */; };
 		5D40F858FBDE9471DD342B76 /* libPods-QFTableProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +63,6 @@
 		1570E52E1F383CEA0022329A /* QFWeakDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFWeakDefine.h; sourceTree = "<group>"; };
 		15F497421F73755E005F7F68 /* QFCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFCustomCell.h; sourceTree = "<group>"; };
 		15F497431F73755E005F7F68 /* QFCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFCustomCell.m; sourceTree = "<group>"; };
-		15F498871F79D420005F7F68 /* UILabel+QFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+QFUtil.h"; sourceTree = "<group>"; };
-		15F498881F79D420005F7F68 /* UILabel+QFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+QFUtil.m"; sourceTree = "<group>"; };
 		9B01B75CFD6B0755D48FD6E5 /* Pods-QFTableProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFTableProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-QFTableProject/Pods-QFTableProject.release.xcconfig"; sourceTree = "<group>"; };
 		B0EA4840998F05EF1F7BC178 /* Pods-QFTableProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QFTableProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QFTableProject/Pods-QFTableProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QFTableProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +91,6 @@
 		150728761F39C3FE0032B905 /* QFTable */ = {
 			isa = PBXGroup;
 			children = (
-				15F498861F79D420005F7F68 /* UILabel+QFUtil */,
 				150728771F39C3FE0032B905 /* Model */,
 				1507287E1F39C3FE0032B905 /* NSObject+selector */,
 				150728811F39C3FE0032B905 /* View */,
@@ -220,15 +216,6 @@
 				1570E52E1F383CEA0022329A /* QFWeakDefine.h */,
 			);
 			path = Define;
-			sourceTree = "<group>";
-		};
-		15F498861F79D420005F7F68 /* UILabel+QFUtil */ = {
-			isa = PBXGroup;
-			children = (
-				15F498871F79D420005F7F68 /* UILabel+QFUtil.h */,
-				15F498881F79D420005F7F68 /* UILabel+QFUtil.m */,
-			);
-			path = "UILabel+QFUtil";
 			sourceTree = "<group>";
 		};
 		4AA22BC695F25BD671C40A1E /* Pods */ = {
@@ -378,7 +365,6 @@
 				154C65C51F3418490060A4C0 /* main.m in Sources */,
 				150728871F39C3FE0032B905 /* NSObject+selector.m in Sources */,
 				1570E50D1F38377E0022329A /* QFLogoCell.m in Sources */,
-				15F498891F79D420005F7F68 /* UILabel+QFUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
