@@ -116,29 +116,15 @@
     [self reloadData];
 }
 
-- (void)refreshView:(id)object withJson:(NSData *)json {
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:json
-                                                         options:NSJSONReadingMutableContainers
-                                                           error:nil];
-    [self refreshView:object withArr:dict[@"table"]];
-}
-
 - (void)refreshView:(id)object withArr:(NSArray *)arr {
     //先清除数据
     [self clearModel];
     [self loadView:object withArr:arr];
 }
 
-- (void)loadView:(id)object withJson:(NSData *)json {
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:json
-                                                        options:NSJSONReadingMutableContainers
-                                                          error:nil];
-    [self loadView:object withArr:dict[@"table"]];
-}
-
 - (void)loadView:(id)object withArr:(NSArray *)arr {
     
-    if (self.objc != object) self.objc = object;
+    if (!self.objc || self.objc != object) self.objc = object;
     
     for (NSString *url in arr) {
         
