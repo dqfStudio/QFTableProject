@@ -10,6 +10,8 @@
 #import "QFBaseCell.h"
 #import "MJRefresh.h"
 
+#define KDefaultPageSize 20
+
 @interface NSString (util)
 - (NSString *(^)(id))append;
 - (NSArray<NSString *> *(^)(NSString *))componentsBySetString;
@@ -191,8 +193,33 @@
     };
 }
 
+- (NSUInteger)pageNo {
+    NSNumber *page = objc_getAssociatedObject(self, _cmd);
+    if (!page) {
+        [self setPageNo:1];
+    }
+    return [objc_getAssociatedObject(self, _cmd) unsignedIntegerValue];
+}
+
+- (void)setPageNo:(NSUInteger)pageNo {
+    objc_setAssociatedObject(self, @selector(pageNo), @(pageNo), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSUInteger)pageSize {
+    NSNumber *pageSize = objc_getAssociatedObject(self, _cmd);
+    if (!pageSize) {
+        return KDefaultPageSize;
+    }
+    return [pageSize unsignedIntegerValue];
+}
+
+- (void)setPageSize:(NSUInteger)pageSize {
+    objc_setAssociatedObject(self, @selector(pageSize), @(pageSize), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (void)beginRefresh {
     if (_refreshBlock) {
+        [self setPageNo:1];
         [self.mj_header beginRefreshing];
     }
 }
@@ -207,6 +234,7 @@
     _refreshBlock = refreshBlock;
     if (_refreshBlock) {
         self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [self setPageNo:1];
             _refreshBlock();
         }];
     }else {
@@ -217,7 +245,9 @@
 - (void)setLoadMoreBlock:(QFLoadMoreBlock)loadMoreBlock {
     _loadMoreBlock = loadMoreBlock;
     if (_loadMoreBlock) {
+        [self setPageNo:1];
         self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            self.pageNo += 1;
            _loadMoreBlock();
         }];
     }else {

@@ -22,6 +22,9 @@ typedef void (^QFLoadMoreBlock)();
  */
 @interface QFTableView : UITableView
 
+@property (nonatomic, assign) NSUInteger pageNo;    // page number, default 1
+@property (nonatomic, assign) NSUInteger pageSize;  // page size, default 20
+
 @property (nonatomic, copy) QFRefreshBlock  refreshBlock;   // block to refresh data
 @property (nonatomic, copy) QFLoadMoreBlock loadMoreBlock;  // block to load more data
 
