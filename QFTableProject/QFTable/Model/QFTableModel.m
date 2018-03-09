@@ -41,7 +41,7 @@
     if ([anObject isKindOfClass:[QFSectionModel class]]) {
         return [self.sectionModelArray indexOfObject:anObject];
     }
-    return 0;
+    return -1;
 }
 
 - (NSUInteger)sections {

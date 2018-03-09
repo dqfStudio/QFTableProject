@@ -33,13 +33,13 @@
 
 - (void)initUI {
     
-    @ws
+//    @ws
     self.table.refreshBlock = ^{
-        @ss
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"jsonFile" ofType:@"geojson"];
-        NSData *data = [NSData dataWithContentsOfFile:filePath];
-        sleep(2);
-        [self.table refreshView:self withJson:data];
+//        @ss
+//        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"jsonFile" ofType:@"geojson"];
+//        NSData *data = [NSData dataWithContentsOfFile:filePath];
+//        sleep(2);
+//        [self.table refreshView:self withJson:data];
     };
     
 //    self.table.loadMoreBlock = ^{

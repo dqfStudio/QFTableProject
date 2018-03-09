@@ -43,7 +43,7 @@
     if ([anObject isKindOfClass:[QFCellModel class]]) {
         return [self.cellModelArray indexOfObject:anObject];
     }
-    return 0;
+    return -1;
 }
 
 - (NSUInteger)cells {
