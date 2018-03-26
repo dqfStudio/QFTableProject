@@ -48,6 +48,36 @@
     objc_setAssociatedObject(self, @selector(keywordsColor), keywordsColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (NSInteger)imgIndex {
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
+}
+- (void)setImgIndex:(NSInteger)imgIndex {
+    objc_setAssociatedObject(self, @selector(imgIndex), @(imgIndex), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSWordAlign)wordAlign {
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
+}
+- (void)setWordAlign:(NSWordAlign)wordAlign {
+    objc_setAssociatedObject(self, @selector(wordAlign), @(wordAlign), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (CGSize)imgSize {
+    NSString *size = objc_getAssociatedObject(self, _cmd);
+    return CGSizeFromString(size);
+}
+- (void)setImgSize:(CGSize)imgSize {
+    NSString *size = NSStringFromCGSize(imgSize);
+    objc_setAssociatedObject(self, @selector(imgSize), size, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *)imgUrl {
+    return objc_getAssociatedObject(self, _cmd);
+}
+- (void)setImgUrl:(NSString *)imgUrl {
+    objc_setAssociatedObject(self, @selector(imgUrl), imgUrl, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (NSString *)underlineStr {
     return objc_getAssociatedObject(self, _cmd);
 }
@@ -107,8 +137,8 @@
  使设置的格式有效
  */
 - (void)formatThatFits {
-    
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self.text];
+    if (!self.text) self.text = @"";
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.text];
     [attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0,self.text.length)];
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -126,6 +156,87 @@
         CFNumberRef num = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&number);
         [attributedString addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:NSMakeRange(0,[attributedString length])];
         CFRelease(num);
+    }
+    
+    //插入图片
+    if (self.imgUrl.length > 0) {
+        NSTextAttachment   *attch  = [[NSTextAttachment alloc] init];
+        NSAttributedString *string = [NSAttributedString attributedStringWithAttachment:attch];
+        
+        if ([self.imgUrl containsString:@"http://"] || [self.imgUrl containsString:@"https://"]) {
+//            [self loadImageForUrl:url toAttach:attch syncLoadCache:NO range:range text:temp];
+        }else {
+            //调整图片大小
+            if ([NSStringFromCGSize(self.imgSize) isEqualToString:NSStringFromCGSize(CGSizeZero)]) {
+                UIImage *image = [UIImage imageNamed:self.imgUrl];
+                CGSize imageSize = image.size;
+                CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
+                
+                if (imageSize.width + wordSize.width > self.bounds.size.width) {
+                    imageSize.width = self.bounds.size.width - wordSize.width;
+                }
+                if (imageSize.height + wordSize.height > self.bounds.size.height) {
+                    imageSize.height = self.bounds.size.height - wordSize.height;
+                }
+                
+                attch.bounds = CGRectMake(0, 0, imageSize.width, imageSize.height);
+                attch.image = image;
+            }else {
+                CGSize imageSize = self.imgSize;
+                CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
+                
+                if (imageSize.width + wordSize.width > self.bounds.size.width) {
+                    imageSize.width = self.bounds.size.width - wordSize.width;
+                }
+                if (imageSize.height + wordSize.height > self.bounds.size.height) {
+                    imageSize.height = self.bounds.size.height - wordSize.height;
+                }
+
+                attch.bounds = CGRectMake(0, 0, imageSize.width, imageSize.height);
+                attch.image = [UIImage imageNamed:self.imgUrl];
+            }
+        }
+        
+        //调整图片位置使文字居中
+        switch (self.wordAlign) {
+            case NSWordAlignBottom:
+            {
+                CGSize  imageSize = attch.bounds.size;
+                attch.bounds = CGRectMake(0, 0, imageSize.width, imageSize.height);
+            }
+                break;
+            case NSWordAlignCenter:
+            {
+                CGSize  imageSize = attch.bounds.size;
+                CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
+                CGFloat height = imageSize.height-wordSize.height;
+                if (height > 0) height = -height/2.0;
+                else height = height/2.0;
+                attch.bounds = CGRectMake(0, height, imageSize.width, imageSize.height);
+            }
+                break;
+            case NSWordAlignTop:
+            {
+                CGSize  imageSize = attch.bounds.size;
+                CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
+                CGFloat height = imageSize.height-wordSize.height;
+                if (height > 0) height = -height;
+                attch.bounds = CGRectMake(0, height, imageSize.width, imageSize.height);
+            }
+                break;
+
+            default:
+                break;
+        }
+        
+        if (self.imgIndex < 0) {
+            [attributedString insertAttributedString:string atIndex:0];
+        }else if (self.imgIndex >= self.text.length) {
+            [attributedString appendAttributedString:string];
+        }else {
+            [attributedString insertAttributedString:string atIndex:self.imgIndex];
+        }
+        
     }
     
     //关键字

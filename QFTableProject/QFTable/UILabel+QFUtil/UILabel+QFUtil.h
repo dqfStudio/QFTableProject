@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, NSWordAlign) {
+    NSWordAlignBottom = 0,
+    NSWordAlignCenter,
+    NSWordAlignTop
+};
+
 @interface UILabel (QFUtil)
 
 //字间距
@@ -19,6 +25,12 @@
 @property (nonatomic, copy)   NSString *keywords;
 @property (nonatomic, strong) UIFont   *keywordsFont;
 @property (nonatomic, strong) UIColor  *keywordsColor;
+
+//插入图片
+@property (nonatomic, assign) NSInteger   imgIndex;
+@property (nonatomic, assign) NSWordAlign wordAlign;
+@property (nonatomic, assign) CGSize      imgSize;
+@property (nonatomic, strong) NSString    *imgUrl;
 
 //下划线
 @property (nonatomic, copy)   NSString *underlineStr;
