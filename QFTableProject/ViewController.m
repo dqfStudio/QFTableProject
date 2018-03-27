@@ -23,6 +23,7 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor grayColor]];
     [self setTitle:@"main"];
+    [self.navigationController.navigationBar setHidden:YES];
     
 //    _table = [[QFTableView alloc] initWithFrame:self.view.frame];
 //    [_table setBackgroundColor:[UIColor clearColor]];
@@ -31,16 +32,18 @@
 //    [self initUI];
     
     UILabel *label = [[UILabel alloc] init];
-    [label setFrame:CGRectMake(100, 100, 200, 190)];
-    [label setBackgroundColor:[UIColor redColor]];
+//    [label setFrame:CGRectMake(0, 100, 200, 190)];
+//    [label setBackgroundColor:[UIColor redColor]];
     [label setText:@"hjk"];
-    [label setImgUrl:@"popup-title-pic-update"];
-    [label setImgIndex:1];
-    [label setImgSize:CGSizeMake(100, 90)];
+//    [label setImgUrl:@"popup-title-pic-update"];
+//    [label setImgIndex:1];
+//    [label setImgSize:CGSizeMake(100, 90)];
 //    [label setWordAlign:NSWordAlignTop];
-    [label setWordAlign:NSWordAlignCenter];
+//    [label setWordAlign:NSWordAlignCenter];
 //    [label setWordAlign:NSWordAlignBottom];
+    [label setFitImg:YES];
     [label formatThatFits];
+//    [label setTextAlignment:NSTextAlignmentCenter];
     
     [self.view addSubview:label];
 }

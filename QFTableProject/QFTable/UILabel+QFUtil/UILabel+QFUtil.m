@@ -78,6 +78,13 @@
     objc_setAssociatedObject(self, @selector(imgUrl), imgUrl, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (BOOL)fitImg {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+- (void)setFitImg:(BOOL)fitImg {
+    objc_setAssociatedObject(self, @selector(fitImg), @(fitImg), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (NSString *)underlineStr {
     return objc_getAssociatedObject(self, _cmd);
 }
@@ -166,38 +173,53 @@
         if ([self.imgUrl containsString:@"http://"] || [self.imgUrl containsString:@"https://"]) {
 //            [self loadImageForUrl:url toAttach:attch syncLoadCache:NO range:range text:temp];
         }else {
-            //调整图片大小
-            if ([NSStringFromCGSize(self.imgSize) isEqualToString:NSStringFromCGSize(CGSizeZero)]) {
+            if (self.fitImg || (CGRectGetWidth(self.frame) == 0 && CGRectGetHeight(self.frame) == 0)) {
                 UIImage *image = [UIImage imageNamed:self.imgUrl];
                 CGSize imageSize = image.size;
+                CGSize frameSize = image.size;
                 CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
                 
-                if (imageSize.width + wordSize.width > self.bounds.size.width) {
-                    imageSize.width = self.bounds.size.width - wordSize.width;
-                }
-                if (imageSize.height + wordSize.height > self.bounds.size.height) {
-                    imageSize.height = self.bounds.size.height - wordSize.height;
+                frameSize.width = imageSize.width + wordSize.width;
+                if (wordSize.width > 0 && wordSize.height > imageSize.height) {
+                    frameSize.height = wordSize.height;
                 }
                 
                 attch.bounds = CGRectMake(0, 0, imageSize.width, imageSize.height);
                 attch.image = image;
+                
+                CGRect frame = CGRectZero;
+                frame.origin = self.frame.origin;
+                frame.size = frameSize;
+                self.frame = frame;
             }else {
-                CGSize imageSize = self.imgSize;
+                //调整图片大小
+                CGSize imageSize = CGSizeZero;
+                if ([NSStringFromCGSize(self.imgSize) isEqualToString:NSStringFromCGSize(CGSizeZero)]) {
+                    UIImage *image = [UIImage imageNamed:self.imgUrl];
+                    imageSize = image.size;
+                }else {
+                    imageSize = self.imgSize;
+                }
+                
                 CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
                 
-                if (imageSize.width + wordSize.width > self.bounds.size.width) {
+                if (self.bounds.size.width > 0 && imageSize.width + wordSize.width > self.bounds.size.width) {
                     imageSize.width = self.bounds.size.width - wordSize.width;
                 }
-                if (imageSize.height + wordSize.height > self.bounds.size.height) {
-                    imageSize.height = self.bounds.size.height - wordSize.height;
+                if (self.bounds.size.height > 0 && imageSize.height + wordSize.height > self.bounds.size.height) {
+                    if (self.text.length == 0 && imageSize.height > self.bounds.size.height) {
+                        imageSize.height = self.bounds.size.height;
+                    }else if (self.text.length > 0) {
+                        imageSize.height = self.bounds.size.height - wordSize.height;
+                    }
                 }
-
+                
                 attch.bounds = CGRectMake(0, 0, imageSize.width, imageSize.height);
                 attch.image = [UIImage imageNamed:self.imgUrl];
             }
         }
         
-        //调整图片位置使文字居中
+        //调整图片位置使文字居上居中居下显示
         switch (self.wordAlign) {
             case NSWordAlignBottom:
             {
@@ -229,6 +251,7 @@
                 break;
         }
         
+        //插入图片，插到某个序号前面
         if (self.imgIndex < 0) {
             [attributedString insertAttributedString:string atIndex:0];
         }else if (self.imgIndex >= self.text.length) {
@@ -237,6 +260,12 @@
             [attributedString insertAttributedString:string atIndex:self.imgIndex];
         }
         
+    }else if (self.fitImg || (CGRectGetWidth(self.frame) == 0 && CGRectGetHeight(self.frame) == 0)) {
+        CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
+        CGRect frame = CGRectZero;
+        frame.origin = self.frame.origin;
+        frame.size = wordSize;
+        self.frame = frame;
     }
     
     //关键字
