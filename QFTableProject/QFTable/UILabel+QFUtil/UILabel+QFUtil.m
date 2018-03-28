@@ -78,13 +78,6 @@
     objc_setAssociatedObject(self, @selector(imgUrl), imgUrl, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BOOL)fitImg {
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-- (void)setFitImg:(BOOL)fitImg {
-    objc_setAssociatedObject(self, @selector(fitImg), @(fitImg), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
 - (NSString *)underlineStr {
     return objc_getAssociatedObject(self, _cmd);
 }
@@ -166,17 +159,16 @@
     }
     
     //插入图片
-    if (self.imgUrl.length > 0) {
+    if (self.imgUrl.length > 0 && ![NSStringFromCGSize(self.imgSize) isEqualToString:NSStringFromCGSize(CGSizeZero)]) {
         NSTextAttachment   *attch  = [[NSTextAttachment alloc] init];
         NSAttributedString *string = [NSAttributedString attributedStringWithAttachment:attch];
         
         if ([self.imgUrl containsString:@"http://"] || [self.imgUrl containsString:@"https://"]) {
 //            [self loadImageForUrl:url toAttach:attch syncLoadCache:NO range:range text:temp];
-        }else {
-            if (self.fitImg || (CGRectGetWidth(self.frame) == 0 && CGRectGetHeight(self.frame) == 0)) {
-                UIImage *image = [UIImage imageNamed:self.imgUrl];
-                CGSize imageSize = image.size;
-                CGSize frameSize = image.size;
+        }else {//加载本地图片
+            if (CGRectGetWidth(self.frame) == 0 && CGRectGetHeight(self.frame) == 0) {
+                CGSize imageSize = imageSize = self.imgSize;
+                CGSize frameSize = self.imgSize;
                 CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
                 
                 frameSize.width = imageSize.width + wordSize.width;
@@ -185,7 +177,7 @@
                 }
                 
                 attch.bounds = CGRectMake(0, 0, imageSize.width, imageSize.height);
-                attch.image = image;
+                attch.image = [UIImage imageNamed:self.imgUrl];
                 
                 CGRect frame = CGRectZero;
                 frame.origin = self.frame.origin;
@@ -193,26 +185,7 @@
                 self.frame = frame;
             }else {
                 //调整图片大小
-                CGSize imageSize = CGSizeZero;
-                if ([NSStringFromCGSize(self.imgSize) isEqualToString:NSStringFromCGSize(CGSizeZero)]) {
-                    UIImage *image = [UIImage imageNamed:self.imgUrl];
-                    imageSize = image.size;
-                }else {
-                    imageSize = self.imgSize;
-                }
-                CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame)-self.imgSize.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
-                
-                if (self.bounds.size.width > 0 && imageSize.width + wordSize.width > self.bounds.size.width) {
-                    imageSize.width = self.bounds.size.width - wordSize.width;
-                }
-                if (self.bounds.size.height > 0 && imageSize.height + wordSize.height > self.bounds.size.height) {
-                    if (self.text.length == 0 && imageSize.height > self.bounds.size.height) {
-                        imageSize.height = self.bounds.size.height;
-                    }else if (self.text.length > 0) {
-                        imageSize.height = self.bounds.size.height - wordSize.height;
-                    }
-                }
-                
+                CGSize imageSize = self.imgSize;
                 attch.bounds = CGRectMake(0, 0, imageSize.width, imageSize.height);
                 attch.image = [UIImage imageNamed:self.imgUrl];
             }
@@ -233,6 +206,7 @@
                 CGFloat height = imageSize.height-wordSize.height;
                 if (height > 0) height = -height/2.0;
                 else height = height/2.0;
+                if (wordSize.width <= 0) height = 0;
                 attch.bounds = CGRectMake(0, height, imageSize.width, imageSize.height);
             }
                 break;
@@ -242,6 +216,7 @@
                 CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
                 CGFloat height = imageSize.height-wordSize.height;
                 if (height > 0) height = -height;
+                if (wordSize.width <= 0) height = 0;
                 attch.bounds = CGRectMake(0, height, imageSize.width, imageSize.height);
             }
                 break;
@@ -259,7 +234,7 @@
             [attributedString insertAttributedString:string atIndex:self.imgIndex];
         }
         
-    }else if (self.fitImg || (CGRectGetWidth(self.frame) == 0 && CGRectGetHeight(self.frame) == 0)) {
+    }else if (CGRectGetWidth(self.frame) == 0 && CGRectGetHeight(self.frame) == 0) {
         CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
         CGRect frame = CGRectZero;
         frame.origin = self.frame.origin;
