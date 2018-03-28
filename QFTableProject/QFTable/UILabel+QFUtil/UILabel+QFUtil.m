@@ -177,7 +177,7 @@
                 UIImage *image = [UIImage imageNamed:self.imgUrl];
                 CGSize imageSize = image.size;
                 CGSize frameSize = image.size;
-                CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
+                CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
                 
                 frameSize.width = imageSize.width + wordSize.width;
                 if (wordSize.width > 0 && wordSize.height > imageSize.height) {
@@ -200,8 +200,7 @@
                 }else {
                     imageSize = self.imgSize;
                 }
-                
-                CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
+                CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame)-self.imgSize.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
                 
                 if (self.bounds.size.width > 0 && imageSize.width + wordSize.width > self.bounds.size.width) {
                     imageSize.width = self.bounds.size.width - wordSize.width;

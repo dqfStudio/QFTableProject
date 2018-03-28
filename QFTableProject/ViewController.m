@@ -32,16 +32,18 @@
 //    [self initUI];
     
     UILabel *label = [[UILabel alloc] init];
-//    [label setFrame:CGRectMake(0, 100, 200, 190)];
-//    [label setBackgroundColor:[UIColor redColor]];
-    [label setText:@"hjk"];
-//    [label setImgUrl:@"popup-title-pic-update"];
-//    [label setImgIndex:1];
-//    [label setImgSize:CGSizeMake(100, 90)];
-//    [label setWordAlign:NSWordAlignTop];
+    [label setFrame:CGRectMake(0, 100, 200, 190)];
+    [label setBackgroundColor:[UIColor redColor]];
+//    [label setText:@"hjk放假啊冷风机奥拉夫啊；放假啊；房价啊；啊；放假啊；加；案件发夹安抚就；就发发简历安抚；阿附近啊；峰就阿发"];
+    [label setText:@"hjk放假啊冷风机放假啊冷风机"];
+    [label setImgUrl:@"popup-title-pic-update"];
+    [label setImgIndex:160];
+    [label setImgSize:CGSizeMake(100, 90)];
+    [label setWordAlign:NSWordAlignTop];
 //    [label setWordAlign:NSWordAlignCenter];
 //    [label setWordAlign:NSWordAlignBottom];
-    [label setFitImg:YES];
+//    [label setFitImg:YES];
+    [label setNumberOfLines:0];
     [label formatThatFits];
 //    [label setTextAlignment:NSTextAlignmentCenter];
     
