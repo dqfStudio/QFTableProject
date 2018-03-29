@@ -167,7 +167,7 @@
 //            [self loadImageForUrl:url toAttach:attch syncLoadCache:NO range:range text:temp];
         }else {//加载本地图片
             if ([NSStringFromCGSize(CGSizeZero) isEqualToString:NSStringFromCGSize(self.frame.size)]) {
-                CGSize imageSize = imageSize = self.imgSize;
+                CGSize imageSize = self.imgSize;
                 CGSize frameSize = self.imgSize;
                 CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
                 
