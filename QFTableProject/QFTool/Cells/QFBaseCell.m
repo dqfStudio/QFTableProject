@@ -44,6 +44,7 @@
     UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (!cell) {
         cell = [[self alloc] initWithStyle:style reuseIdentifier:reuseIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (block) {
             block(cell);
         }
