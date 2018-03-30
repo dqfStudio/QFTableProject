@@ -95,7 +95,7 @@
             
             for (int j=0; j<[sectionModel cells]; j++) {
                 QFCellModel *cellModel = [sectionModel cellAtIndex:j];
-                NSString *cellSelector = sectionModel.selector;
+                NSString *cellSelector = cellModel.selector;
                 if (cellSelector.length > 0 && cellModel) {
                     SEL sel = NSSelectorFromString(cellModel.selector);
                     if([self.objc respondsToSelector:sel]){
