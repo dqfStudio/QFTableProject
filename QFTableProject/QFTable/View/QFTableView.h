@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "QFTableModel.h"
 #import "NSObject+selector.h"
-#import "UILabel+QFUtil.h"
 #import "QFSectionModel.h"
 
 typedef void (^QFRefreshBlock)(void);

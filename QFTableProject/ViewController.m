@@ -10,6 +10,7 @@
 #import "QFWeakDefine.h"
 #import "QFTableView.h"
 #import "QFSwitchCell.h"
+#import "UILabel+QFUtil.h"
 
 @interface ViewController ()
 
