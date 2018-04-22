@@ -166,8 +166,8 @@
         if ([self.imgUrl containsString:@"http://"] || [self.imgUrl containsString:@"https://"]) {
 //            [self loadImageForUrl:url toAttach:attch syncLoadCache:NO range:range text:temp];
         }else {//加载本地图片
-            if (CGRectGetWidth(self.frame) == 0 && CGRectGetHeight(self.frame) == 0) {
-                CGSize imageSize = imageSize = self.imgSize;
+            if ([NSStringFromCGSize(CGSizeZero) isEqualToString:NSStringFromCGSize(self.frame.size)]) {
+                CGSize imageSize = self.imgSize;
                 CGSize frameSize = self.imgSize;
                 CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
                 
@@ -234,7 +234,7 @@
             [attributedString insertAttributedString:string atIndex:self.imgIndex];
         }
         
-    }else if (CGRectGetWidth(self.frame) == 0 && CGRectGetHeight(self.frame) == 0) {
+    }else if ([NSStringFromCGSize(CGSizeZero) isEqualToString:NSStringFromCGSize(self.frame.size)]) {
         CGSize  wordSize = [self.text boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame), MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size;
         CGRect frame = CGRectZero;
         frame.origin = self.frame.origin;
