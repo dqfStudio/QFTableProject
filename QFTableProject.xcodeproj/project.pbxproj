@@ -10,7 +10,6 @@
 		150728841F39C3FE0032B905 /* QFCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 150728791F39C3FE0032B905 /* QFCellModel.m */; };
 		150728851F39C3FE0032B905 /* QFSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1507287B1F39C3FE0032B905 /* QFSectionModel.m */; };
 		150728861F39C3FE0032B905 /* QFTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1507287D1F39C3FE0032B905 /* QFTableModel.m */; };
-		150728871F39C3FE0032B905 /* NSObject+selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 150728801F39C3FE0032B905 /* NSObject+selector.m */; };
 		150728881F39C3FE0032B905 /* QFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 150728831F39C3FE0032B905 /* QFTableView.m */; };
 		1507288B1F39C4DA0032B905 /* QFBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1507288A1F39C4DA0032B905 /* QFBaseCell.m */; };
 		154C65C51F3418490060A4C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 154C65C41F3418490060A4C0 /* main.m */; };
@@ -24,7 +23,8 @@
 		1570E50F1F38377E0022329A /* QFRightImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5021F38377E0022329A /* QFRightImageCell.m */; };
 		1570E5111F38377E0022329A /* QFSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1570E5061F38377E0022329A /* QFSwitchCell.m */; };
 		1570E5131F38377E0022329A /* jsonFile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 1570E50A1F38377E0022329A /* jsonFile.geojson */; };
-		15B0768B1FA9901D00659F65 /* UILabel+QFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B0768A1FA9901D00659F65 /* UILabel+QFUtil.m */; };
+		15B4D6C1208C8B7400773E04 /* UILabel+QFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B4D6BF208C8B7400773E04 /* UILabel+QFUtil.m */; };
+		15B4D6C5208C8BD900773E04 /* NSObject+selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B4D6C3208C8BD900773E04 /* NSObject+selector.m */; };
 		15E602E02068F2680096B628 /* popup-title-pic-update@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E602DF2068F2680096B628 /* popup-title-pic-update@3x.png */; };
 		15F497441F73755E005F7F68 /* QFCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F497431F73755E005F7F68 /* QFCustomCell.m */; };
 		5D40F858FBDE9471DD342B76 /* libPods-QFTableProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */; };
@@ -37,8 +37,6 @@
 		1507287B1F39C3FE0032B905 /* QFSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFSectionModel.m; sourceTree = "<group>"; };
 		1507287C1F39C3FE0032B905 /* QFTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTableModel.h; sourceTree = "<group>"; };
 		1507287D1F39C3FE0032B905 /* QFTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTableModel.m; sourceTree = "<group>"; };
-		1507287F1F39C3FE0032B905 /* NSObject+selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+selector.h"; sourceTree = "<group>"; };
-		150728801F39C3FE0032B905 /* NSObject+selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+selector.m"; sourceTree = "<group>"; };
 		150728821F39C3FE0032B905 /* QFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTableView.h; sourceTree = "<group>"; };
 		150728831F39C3FE0032B905 /* QFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTableView.m; sourceTree = "<group>"; };
 		150728891F39C4DA0032B905 /* QFBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFBaseCell.h; sourceTree = "<group>"; };
@@ -63,8 +61,10 @@
 		1570E5061F38377E0022329A /* QFSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFSwitchCell.m; sourceTree = "<group>"; };
 		1570E50A1F38377E0022329A /* jsonFile.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonFile.geojson; sourceTree = "<group>"; };
 		1570E52E1F383CEA0022329A /* QFWeakDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFWeakDefine.h; sourceTree = "<group>"; };
-		15B076891FA9901D00659F65 /* UILabel+QFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+QFUtil.h"; sourceTree = "<group>"; };
-		15B0768A1FA9901D00659F65 /* UILabel+QFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+QFUtil.m"; sourceTree = "<group>"; };
+		15B4D6BE208C8B7400773E04 /* UILabel+QFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+QFUtil.h"; sourceTree = "<group>"; };
+		15B4D6BF208C8B7400773E04 /* UILabel+QFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+QFUtil.m"; sourceTree = "<group>"; };
+		15B4D6C3208C8BD900773E04 /* NSObject+selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+selector.m"; sourceTree = "<group>"; };
+		15B4D6C4208C8BD900773E04 /* NSObject+selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+selector.h"; sourceTree = "<group>"; };
 		15E602DF2068F2680096B628 /* popup-title-pic-update@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup-title-pic-update@3x.png"; sourceTree = "<group>"; };
 		15F497421F73755E005F7F68 /* QFCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFCustomCell.h; sourceTree = "<group>"; };
 		15F497431F73755E005F7F68 /* QFCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFCustomCell.m; sourceTree = "<group>"; };
@@ -96,9 +96,8 @@
 		150728761F39C3FE0032B905 /* QFTable */ = {
 			isa = PBXGroup;
 			children = (
-				15B076881FA9901D00659F65 /* UILabel+QFUtil */,
+				15B4D6C2208C8BD900773E04 /* NSObject+selector */,
 				150728771F39C3FE0032B905 /* Model */,
-				1507287E1F39C3FE0032B905 /* NSObject+selector */,
 				150728811F39C3FE0032B905 /* View */,
 			);
 			path = QFTable;
@@ -115,15 +114,6 @@
 				1507287D1F39C3FE0032B905 /* QFTableModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		1507287E1F39C3FE0032B905 /* NSObject+selector */ = {
-			isa = PBXGroup;
-			children = (
-				1507287F1F39C3FE0032B905 /* NSObject+selector.h */,
-				150728801F39C3FE0032B905 /* NSObject+selector.m */,
-			);
-			path = "NSObject+selector";
 			sourceTree = "<group>";
 		};
 		150728811F39C3FE0032B905 /* View */ = {
@@ -183,6 +173,7 @@
 		1570E4F71F38377E0022329A /* QFTool */ = {
 			isa = PBXGroup;
 			children = (
+				15B4D6BD208C8B7400773E04 /* UILabel+QFUtil */,
 				1570E52D1F383CEA0022329A /* Define */,
 				1570E4F81F38377E0022329A /* Cells */,
 				1570E5091F38377E0022329A /* Resource */,
@@ -225,13 +216,22 @@
 			path = Define;
 			sourceTree = "<group>";
 		};
-		15B076881FA9901D00659F65 /* UILabel+QFUtil */ = {
+		15B4D6BD208C8B7400773E04 /* UILabel+QFUtil */ = {
 			isa = PBXGroup;
 			children = (
-				15B076891FA9901D00659F65 /* UILabel+QFUtil.h */,
-				15B0768A1FA9901D00659F65 /* UILabel+QFUtil.m */,
+				15B4D6BE208C8B7400773E04 /* UILabel+QFUtil.h */,
+				15B4D6BF208C8B7400773E04 /* UILabel+QFUtil.m */,
 			);
 			path = "UILabel+QFUtil";
+			sourceTree = "<group>";
+		};
+		15B4D6C2208C8BD900773E04 /* NSObject+selector */ = {
+			isa = PBXGroup;
+			children = (
+				15B4D6C3208C8BD900773E04 /* NSObject+selector.m */,
+				15B4D6C4208C8BD900773E04 /* NSObject+selector.h */,
+			);
+			path = "NSObject+selector";
 			sourceTree = "<group>";
 		};
 		4AA22BC695F25BD671C40A1E /* Pods */ = {
@@ -370,6 +370,7 @@
 			files = (
 				154C65CB1F34184A0060A4C0 /* ViewController.m in Sources */,
 				150728851F39C3FE0032B905 /* QFSectionModel.m in Sources */,
+				15B4D6C5208C8BD900773E04 /* NSObject+selector.m in Sources */,
 				150728881F39C3FE0032B905 /* QFTableView.m in Sources */,
 				1507288B1F39C4DA0032B905 /* QFBaseCell.m in Sources */,
 				1570E50B1F38377E0022329A /* QFLeftImageCell.m in Sources */,
@@ -380,9 +381,8 @@
 				15F497441F73755E005F7F68 /* QFCustomCell.m in Sources */,
 				150728861F39C3FE0032B905 /* QFTableModel.m in Sources */,
 				154C65C51F3418490060A4C0 /* main.m in Sources */,
-				150728871F39C3FE0032B905 /* NSObject+selector.m in Sources */,
+				15B4D6C1208C8B7400773E04 /* UILabel+QFUtil.m in Sources */,
 				1570E50D1F38377E0022329A /* QFLogoCell.m in Sources */,
-				15B0768B1FA9901D00659F65 /* UILabel+QFUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
