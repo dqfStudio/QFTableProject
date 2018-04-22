@@ -154,6 +154,12 @@
         
         if([object respondsToSelector:NSSelectorFromString(cellSelector)]){
             [object performSelector:NSSelectorFromString(cellSelector) withObjects:@[cellModel]];
+            if (!cellModel.renderBlock) {
+                cellModel.renderBlock = [self renderBlock];
+            }
+            if (!cellModel.selectionBlock) {
+                cellModel.selectionBlock = [self selectionBlock];
+            }
         }else {
             cellModel.renderBlock = [self renderBlock];
             cellModel.selectionBlock = [self selectionBlock];
@@ -167,14 +173,14 @@
 }
 
 - (QFCellRenderBlock)renderBlock {
-    return ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
+    return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
         QFBaseCell *cell = [QFBaseCell registerTable:table];
         return cell;
     };
 }
 
 - (QFCellSelectionBlock)selectionBlock {
-    return ^(NSIndexPath *indexPath, UITableView *table) {
+    return ^(NSIndexPath *indexPath, QFTableView *table) {
         [table deselectRowAtIndexPath:indexPath animated:YES];
     };
 }

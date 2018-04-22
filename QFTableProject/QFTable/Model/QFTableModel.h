@@ -8,6 +8,8 @@
 
 #import "QFSectionModel.h"
 
+@class QFTableView;
+
 /**
  *  QFTableModel implements some methods in UITableViewDelegate & UITableViewDataSource.
  *  it can be used as the delegate & dataSource of a tableView.

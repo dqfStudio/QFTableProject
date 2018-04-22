@@ -114,7 +114,7 @@
 }
 
 - (QFCellRenderBlock)renderBlock {
-    return ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
+    return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
         
         QFSwitchCell *cell = [QFSwitchCell registerTable:table];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
@@ -142,7 +142,7 @@
 }
 
 - (QFCellRenderBlock)renderBlock2 {
-    return ^UITableViewCell *(NSIndexPath *indexPath, UITableView *table) {
+    return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
         
         QFSwitchCell *cell = [QFSwitchCell registerTable:table];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
@@ -153,7 +153,7 @@
 }
 
 - (QFCellSelectionBlock)selectionBlock {
-    return ^(NSIndexPath *indexPath, UITableView *table) {
+    return ^(NSIndexPath *indexPath, QFTableView *table) {
         [table deselectRowAtIndexPath:indexPath animated:YES];
     };
 }

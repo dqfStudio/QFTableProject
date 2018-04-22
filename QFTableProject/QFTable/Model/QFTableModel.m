@@ -80,7 +80,7 @@
     QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     QFCellHeightBlock heightBlock = cellModel.heightBlock;
     if (heightBlock) {
-        return heightBlock(indexPath, tableView);
+        return heightBlock(indexPath, (QFTableView *)tableView);
     } else {
         return cellModel.height;
     }
@@ -89,7 +89,7 @@
     QFSectionModel *sectionModel = [self sectionModelAtSection:section];
     QFSectionHeightBlock headerHeightBlock = sectionModel.headerHeightBlock;
     if (headerHeightBlock) {
-        return headerHeightBlock(section, tableView);
+        return headerHeightBlock(section, (QFTableView *)tableView);
     } else {
         return sectionModel.headerHeight;
     }
@@ -98,7 +98,7 @@
     QFSectionModel *sectionModel = [self sectionModelAtSection:section];
     QFSectionHeightBlock footerHeightBlock = sectionModel.footerHeightBlock;
     if (footerHeightBlock) {
-        return footerHeightBlock(section, tableView);
+        return footerHeightBlock(section, (QFTableView *)tableView);
     } else {
         return sectionModel.footerHeight;
     }
@@ -107,7 +107,7 @@
     QFSectionModel *sectionModel = [self sectionModelAtSection:section];
     QFViewRenderBlock headerViewRenderBlock = sectionModel.headerViewRenderBlock;
     if (headerViewRenderBlock) {
-        return headerViewRenderBlock(section, tableView);
+        return headerViewRenderBlock(section, (QFTableView *)tableView);
     } else {
         return sectionModel.headerView;
     }
@@ -116,7 +116,7 @@
     QFSectionModel *sectionModel = [self sectionModelAtSection:section];
     QFViewRenderBlock footerViewRenderBlock = sectionModel.footerViewRenderBlock;
     if (footerViewRenderBlock) {
-        return footerViewRenderBlock(section, tableView);
+        return footerViewRenderBlock(section, (QFTableView *)tableView);
     } else {
         return sectionModel.footerView;
     }
@@ -126,7 +126,7 @@
     QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     QFCellWillSelectBlock willSelectBlock = cellModel.willSelectBlock;
     if (willSelectBlock) {
-        return willSelectBlock(indexPath, tableView);
+        return willSelectBlock(indexPath, (QFTableView *)tableView);
     }
     return indexPath;
 }
@@ -135,7 +135,7 @@
     QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     QFCellWillSelectBlock willDeselectBlock = cellModel.willDeselectBlock;
     if (willDeselectBlock) {
-        return willDeselectBlock(indexPath, tableView);
+        return willDeselectBlock(indexPath, (QFTableView *)tableView);
     }
     return indexPath;
 }
@@ -143,14 +143,14 @@
     QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     QFCellSelectionBlock selectionBlock = cellModel.selectionBlock;
     if (selectionBlock) {
-        selectionBlock(indexPath, tableView);
+        selectionBlock(indexPath, (QFTableView *)tableView);
     }
 }
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     QFCellSelectionBlock deselectionBlock = cellModel.deselectionBlock;
     if (deselectionBlock) {
-        deselectionBlock(indexPath, tableView);
+        deselectionBlock(indexPath, (QFTableView *)tableView);
     }
 }
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -171,7 +171,7 @@
     UITableViewCell *cell = nil;
     QFCellRenderBlock renderBlock = cellModel.renderBlock;
     if (renderBlock) {
-        cell = renderBlock(indexPath, tableView);
+        cell = renderBlock(indexPath, (QFTableView *)tableView);
     }
     return cell;
 }
@@ -179,7 +179,7 @@
     QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     QFCellWillDisplayBlock willDisplayBlock = cellModel.willDisplayBlock;
     if (willDisplayBlock) {
-        willDisplayBlock(cell, indexPath, tableView);
+        willDisplayBlock(cell, indexPath, (QFTableView *)tableView);
     }
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -198,7 +198,7 @@
     QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     QFCellCommitEditBlock commitEditBlock = cellModel.commitEditBlock;
     if (commitEditBlock) {
-        commitEditBlock(indexPath, tableView, editingStyle);
+        commitEditBlock(indexPath, (QFTableView *)tableView, editingStyle);
     }
 }
 

@@ -8,8 +8,10 @@
 
 #import "QFCellModel.h"
 
-typedef UIView * (^QFViewRenderBlock)(NSInteger section, UITableView *table);
-typedef CGFloat (^QFSectionHeightBlock)(NSInteger section, UITableView *table);
+@class QFTableView;
+
+typedef UIView * (^QFViewRenderBlock)(NSInteger section, QFTableView *table);
+typedef CGFloat (^QFSectionHeightBlock)(NSInteger section, QFTableView *table);
 
 /** Table view's section model */
 @interface QFSectionModel : NSObject

@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef CGFloat (^QFCellHeightBlock)(NSIndexPath *indexPath, UITableView *table);
-typedef UITableViewCell * (^QFCellRenderBlock)(NSIndexPath *indexPath, UITableView *table);
-typedef NSIndexPath * (^QFCellWillSelectBlock)(NSIndexPath *indexPath, UITableView *table);
-typedef void (^QFCellSelectionBlock)(NSIndexPath *indexPath, UITableView *table);
-typedef void (^QFCellWillDisplayBlock)(UITableViewCell *cell, NSIndexPath *indexPath, UITableView *table);
-typedef void (^QFCellCommitEditBlock)(NSIndexPath *indexPath, UITableView *table,
+@class QFTableView;
+
+typedef CGFloat (^QFCellHeightBlock)(NSIndexPath *indexPath, QFTableView *table);
+typedef UITableViewCell * (^QFCellRenderBlock)(NSIndexPath *indexPath, QFTableView *table);
+typedef NSIndexPath * (^QFCellWillSelectBlock)(NSIndexPath *indexPath, QFTableView *table);
+typedef void (^QFCellSelectionBlock)(NSIndexPath *indexPath, QFTableView *table);
+typedef void (^QFCellWillDisplayBlock)(UITableViewCell *cell, NSIndexPath *indexPath, QFTableView *table);
+typedef void (^QFCellCommitEditBlock)(NSIndexPath *indexPath, QFTableView *table,
 UITableViewCellEditingStyle editingStyle);
 
 /** Table view's row model */
