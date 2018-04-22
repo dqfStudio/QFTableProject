@@ -7,7 +7,6 @@
 //
 
 #import "QFTableView.h"
-#import "QFBaseCell.h"
 #import "MJRefresh.h"
 
 #define KDefaultPageSize 20
@@ -23,6 +22,8 @@
 @end
 
 @implementation QFTableView
+
+#pragma --mark init
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -59,6 +60,52 @@
     }
     return self;
 }
+
+#pragma --mark register cell
+
+- (id)registerCell:(Class)cellClass {
+    return [self registerCell:cellClass style:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(cellClass) initBlock:nil];
+}
+
+
+
+- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style {
+    return [self registerCell:cellClass style:style reuseIdentifier:NSStringFromClass(cellClass) initBlock:nil];
+}
+- (id)registerCell:(Class)cellClass reuseIdentifier:(NSString *)reuseIdentifier {
+    return [self registerCell:cellClass style:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier initBlock:nil];
+}
+- (id)registerCell:(Class)cellClass initBlock:(QFCellInitBlock)block {
+    return [self registerCell:cellClass style:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(cellClass) initBlock:block];
+}
+
+
+
+- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style initBlock:(QFCellInitBlock)block {
+    return [self registerCell:cellClass style:style reuseIdentifier:NSStringFromClass(cellClass) initBlock:block];
+}
+- (id)registerCell:(Class)cellClass reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block {
+    return [self registerCell:cellClass style:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier initBlock:block];
+}
+- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    return [self registerCell:cellClass style:style reuseIdentifier:reuseIdentifier initBlock:nil];
+}
+
+
+
+- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block {
+    UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (!cell) {
+        cell = [[cellClass alloc] initWithStyle:style reuseIdentifier:reuseIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        if (block) {
+            block(cell);
+        }
+    }
+    return cell;
+}
+
+#pragma --mark other methods
 
 //add QFSectionModel
 - (void)addModel:(QFSectionModel*)anObject {
@@ -174,7 +221,7 @@
 
 - (QFCellRenderBlock)renderBlock {
     return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
-        QFBaseCell *cell = [QFBaseCell registerTable:table];
+        UITableViewCell *cell = [table registerCell:UITableViewCell.class];
         return cell;
     };
 }

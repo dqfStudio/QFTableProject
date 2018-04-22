@@ -14,6 +14,7 @@
 
 typedef void (^QFRefreshBlock)(void);
 typedef void (^QFLoadMoreBlock)(void);
+typedef void(^QFCellInitBlock)(id cell);
 
 /**
  *  QFTableView implements some methods in UITableViewDelegate & UITableViewDataSource.
@@ -38,6 +39,25 @@ typedef void (^QFLoadMoreBlock)(void);
 
 //stop refresh
 - (void)endRefresh;
+
+#pragma --mark register cell
+
+- (id)registerCell:(Class)cellClass;
+
+
+- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style;
+- (id)registerCell:(Class)cellClass reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)registerCell:(Class)cellClass initBlock:(QFCellInitBlock)block;
+
+
+- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style initBlock:(QFCellInitBlock)block;
+- (id)registerCell:(Class)cellClass reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block;
+- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
+
+
+- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block;
+
+#pragma --mark register cell
 
 - (void)refreshView:(id)object withArr:(NSArray *)arr;
 

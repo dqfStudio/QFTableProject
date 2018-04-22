@@ -116,7 +116,7 @@
 - (QFCellRenderBlock)renderBlock {
     return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
         
-        QFSwitchCell *cell = [QFSwitchCell registerTable:table];
+        QFSwitchCell *cell = [table registerCell:QFSwitchCell.class];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
         
         switch (indexPath.row) {
@@ -144,7 +144,7 @@
 - (QFCellRenderBlock)renderBlock2 {
     return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
         
-        QFSwitchCell *cell = [QFSwitchCell registerTable:table];
+        QFSwitchCell *cell = [table registerCell:QFSwitchCell.class];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
         cell.textLabel.text = @"路径追踪2";
         cell.callback = ^(UISwitch *sender) {};
