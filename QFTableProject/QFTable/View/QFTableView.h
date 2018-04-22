@@ -13,7 +13,7 @@
 
 typedef void (^QFRefreshBlock)(void);
 typedef void (^QFLoadMoreBlock)(void);
-typedef void(^QFCellInitBlock)(id cell);
+typedef void(^QFCellInitBlock)(id cell, QFCellModel *cellModel);
 
 /**
  *  QFTableView implements some methods in UITableViewDelegate & UITableViewDataSource.
@@ -41,20 +41,20 @@ typedef void(^QFCellInitBlock)(id cell);
 
 #pragma --mark register cell
 
-- (id)registerCell:(Class)cellClass;
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath;
 
 
-- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style;
-- (id)registerCell:(Class)cellClass reuseIdentifier:(NSString *)reuseIdentifier;
-- (id)registerCell:(Class)cellClass initBlock:(QFCellInitBlock)block;
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style;
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath initBlock:(QFCellInitBlock)block;
 
 
-- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style initBlock:(QFCellInitBlock)block;
-- (id)registerCell:(Class)cellClass reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block;
-- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style initBlock:(QFCellInitBlock)block;
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block;
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
 
-- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block;
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block;
 
 #pragma --mark register cell
 

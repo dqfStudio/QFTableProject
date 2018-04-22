@@ -63,43 +63,44 @@
 
 #pragma --mark register cell
 
-- (id)registerCell:(Class)cellClass {
-    return [self registerCell:cellClass style:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(cellClass) initBlock:nil];
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath {
+    return [self registerCell:cellClass indexPath:indexPath style:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(cellClass) initBlock:nil];
 }
 
 
 
-- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style {
-    return [self registerCell:cellClass style:style reuseIdentifier:NSStringFromClass(cellClass) initBlock:nil];
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style {
+    return [self registerCell:cellClass indexPath:indexPath style:style reuseIdentifier:NSStringFromClass(cellClass) initBlock:nil];
 }
-- (id)registerCell:(Class)cellClass reuseIdentifier:(NSString *)reuseIdentifier {
-    return [self registerCell:cellClass style:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier initBlock:nil];
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath reuseIdentifier:(NSString *)reuseIdentifier {
+    return [self registerCell:cellClass indexPath:indexPath style:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier initBlock:nil];
 }
-- (id)registerCell:(Class)cellClass initBlock:(QFCellInitBlock)block {
-    return [self registerCell:cellClass style:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(cellClass) initBlock:block];
-}
-
-
-
-- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style initBlock:(QFCellInitBlock)block {
-    return [self registerCell:cellClass style:style reuseIdentifier:NSStringFromClass(cellClass) initBlock:block];
-}
-- (id)registerCell:(Class)cellClass reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block {
-    return [self registerCell:cellClass style:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier initBlock:block];
-}
-- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    return [self registerCell:cellClass style:style reuseIdentifier:reuseIdentifier initBlock:nil];
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath initBlock:(QFCellInitBlock)block {
+    return [self registerCell:cellClass indexPath:indexPath style:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(cellClass) initBlock:block];
 }
 
 
 
-- (id)registerCell:(Class)cellClass style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block {
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style initBlock:(QFCellInitBlock)block {
+    return [self registerCell:cellClass indexPath:indexPath style:style reuseIdentifier:NSStringFromClass(cellClass) initBlock:block];
+}
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block {
+    return [self registerCell:cellClass indexPath:indexPath style:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier initBlock:block];
+}
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    return [self registerCell:cellClass indexPath:indexPath style:style reuseIdentifier:reuseIdentifier initBlock:nil];
+}
+
+
+
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block {
     UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (!cell) {
         cell = [[cellClass alloc] initWithStyle:style reuseIdentifier:reuseIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (block) {
-            block(cell);
+            QFCellModel *cellModel = [self cellAtIndexPath:indexPath];
+            block(cell, cellModel);
         }
     }
     return cell;
@@ -221,7 +222,7 @@
 
 - (QFCellRenderBlock)renderBlock {
     return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
-        UITableViewCell *cell = [table registerCell:UITableViewCell.class];
+        UITableViewCell *cell = [table registerCell:UITableViewCell.class indexPath:indexPath];
         return cell;
     };
 }
