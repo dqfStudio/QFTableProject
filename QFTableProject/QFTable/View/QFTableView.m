@@ -99,8 +99,7 @@
         cell = [[cellClass alloc] initWithStyle:style reuseIdentifier:reuseIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (block) {
-            QFCellModel *cellModel = [self cellAtIndexPath:indexPath];
-            block(cell, cellModel);
+            block(cell);
         }
     }
     return cell;

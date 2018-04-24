@@ -13,7 +13,7 @@
 
 typedef void (^QFRefreshBlock)(void);
 typedef void (^QFLoadMoreBlock)(void);
-typedef void(^QFCellInitBlock)(id cell, QFCellModel *cellModel);
+typedef void(^QFCellInitBlock)(id cell);
 
 /**
  *  QFTableView implements some methods in UITableViewDelegate & UITableViewDataSource.
