@@ -10,6 +10,7 @@
 #import "QFTableModel.h"
 #import "NSObject+selector.h"
 #import "QFSectionModel.h"
+#import "MJRefresh.h"
 
 typedef void (^QFRefreshBlock)(void);
 typedef void (^QFLoadMoreBlock)(void);
@@ -64,4 +65,9 @@ typedef void(^QFCellInitBlock)(id cell);
 
 - (void)cellAtIndexPath:(NSIndexPath *)indexPath resetHeight:(NSInteger)height;
 
+@end
+
+@interface NSArray (QFTableView)
+- (NSArray *(^)(NSArray *))linkCell;
+- (void (^)(NSUInteger section, NSString *sectionModel))setSectionModel;
 @end

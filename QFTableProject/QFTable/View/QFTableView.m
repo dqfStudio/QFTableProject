@@ -7,7 +7,7 @@
 //
 
 #import "QFTableView.h"
-#import "MJRefresh.h"
+#import <objc/runtime.h>
 
 #define KDefaultPageSize 20
 
@@ -320,6 +320,48 @@
             }
         }
         return mutablerArr;
+    };
+}
+@end
+
+@interface NSArray ()
+@property (nonatomic) NSInteger section;
+@property (nonatomic) NSString *sectionModel;
+@end
+
+@implementation NSArray (QFTableView)
+- (NSInteger)section {
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
+}
+- (void)setSection:(NSInteger)section {
+    objc_setAssociatedObject(self, @selector(section), @(section), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *)sectionModel {
+    return objc_getAssociatedObject(self, _cmd);
+}
+- (void)setSectionModel:(NSString *)sectionModel {
+    objc_setAssociatedObject(self, @selector(sectionModel), sectionModel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSArray *(^)(NSArray *))linkCell {
+    return ^NSArray *(NSArray *obj) {
+        NSMutableArray *mutableArr = [[NSMutableArray alloc] init];
+        for (int i=0; i<self.count; i++) {
+            NSString *model = self.sectionModel.append(@"<").append(@(self.section)).append(@">").append(self[i]);
+            [mutableArr addObject:model];
+        }
+        for (int i=0; i<obj.count; i++) {
+            NSString *model = obj.sectionModel.append(@"<").append(@(obj.section)).append(@">").append(obj[i]);
+            [mutableArr addObject:model];
+        }
+        return mutableArr;
+    };
+}
+- (void (^)(NSUInteger section, NSString *sectionModel))setSectionModel {
+    return ^void (NSUInteger section, NSString *sectionModel) {
+        self.section = section;
+        self.sectionModel = sectionModel;
     };
 }
 @end
