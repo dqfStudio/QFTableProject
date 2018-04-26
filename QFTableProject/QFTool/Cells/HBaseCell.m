@@ -1,14 +1,14 @@
 //
-//  QFBaseCell.m
+//  HBaseCell.m
 //  TableModel
 //
 //  Created by dqf on 2017/7/14.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "QFBaseCell.h"
+#import "HBaseCell.h"
 
-@implementation QFBaseCell
+@implementation HBaseCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) [self initUI];

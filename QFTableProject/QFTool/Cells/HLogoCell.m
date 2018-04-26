@@ -1,14 +1,14 @@
 //
-//  QFLogoCell.m
+//  HLogoCell.m
 //  MGMobileMusic
 //
 //  Created by dqf on 2017/8/4.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "QFLogoCell.h"
+#import "HLogoCell.h"
 
-@implementation QFLogoCell
+@implementation HLogoCell
 
 - (UIImageView *)logoView {
     if (!_logoView) {

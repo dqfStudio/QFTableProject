@@ -1,12 +1,12 @@
 //
-//  QFTableView.m
+//  HTableView.m
 //  TableModel
 //
 //  Created by dqf on 2017/7/14.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "QFTableView.h"
+#import "HTableView.h"
 #import <objc/runtime.h>
 
 #define KDefaultPageSize 20
@@ -16,12 +16,12 @@
 - (NSArray<NSString *> *(^)(NSString *))componentsBySetString;
 @end
 
-@interface QFTableView ()
+@interface HTableView ()
 @property (nonatomic, weak)   id objc;
-@property (nonatomic, strong) QFTableModel *tableModel;
+@property (nonatomic, strong) HTableModel *tableModel;
 @end
 
-@implementation QFTableView
+@implementation HTableView
 
 #pragma --mark init
 
@@ -35,7 +35,7 @@
             self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
         
-        self.tableModel = [[QFTableModel alloc] init];
+        self.tableModel = [[HTableModel alloc] init];
         self.tableFooterView = [UIView new];
         self.delegate = self.tableModel;
         self.dataSource = self.tableModel;
@@ -53,7 +53,7 @@
             self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
         
-        self.tableModel = [[QFTableModel alloc] init];
+        self.tableModel = [[HTableModel alloc] init];
         self.tableFooterView = [UIView new];
         self.delegate = self.tableModel;
         self.dataSource = self.tableModel;
@@ -75,16 +75,16 @@
 - (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath reuseIdentifier:(NSString *)reuseIdentifier {
     return [self registerCell:cellClass indexPath:indexPath style:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier initBlock:nil];
 }
-- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath initBlock:(QFCellInitBlock)block {
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath initBlock:(HCellInitBlock)block {
     return [self registerCell:cellClass indexPath:indexPath style:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(cellClass) initBlock:block];
 }
 
 
 
-- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style initBlock:(QFCellInitBlock)block {
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style initBlock:(HCellInitBlock)block {
     return [self registerCell:cellClass indexPath:indexPath style:style reuseIdentifier:NSStringFromClass(cellClass) initBlock:block];
 }
-- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block {
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath reuseIdentifier:(NSString *)reuseIdentifier initBlock:(HCellInitBlock)block {
     return [self registerCell:cellClass indexPath:indexPath style:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier initBlock:block];
 }
 - (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -93,7 +93,7 @@
 
 
 
-- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier initBlock:(QFCellInitBlock)block {
+- (id)registerCell:(Class)cellClass indexPath:(NSIndexPath *)indexPath style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier initBlock:(HCellInitBlock)block {
     UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (!cell) {
         cell = [[cellClass alloc] initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -107,32 +107,32 @@
 
 #pragma --mark other methods
 
-//add QFSectionModel
-- (void)addModel:(QFSectionModel*)anObject {
+//add HSectionModel
+- (void)addModel:(HSectionModel*)anObject {
     [self.tableModel addModel:anObject];
 }
 
-- (QFSectionModel *)sectionAtIndex:(NSUInteger)index {
+- (HSectionModel *)sectionAtIndex:(NSUInteger)index {
     return [self.tableModel sectionAtIndex:index];
 }
 
-- (NSUInteger)indexOfSection:(QFSectionModel *)anObject {
+- (NSUInteger)indexOfSection:(HSectionModel *)anObject {
     return [self.tableModel indexOfSection:anObject];
 }
 
-- (QFCellModel *)cellAtIndexPath:(NSIndexPath *)indexPath {
-    QFSectionModel *sectionModel = [self sectionAtIndex:indexPath.section];
+- (HCellModel *)cellAtIndexPath:(NSIndexPath *)indexPath {
+    HSectionModel *sectionModel = [self sectionAtIndex:indexPath.section];
     return [sectionModel cellAtIndex:indexPath.row];
 }
 
 - (void)cellAtIndexPath:(NSIndexPath *)indexPath resetHeight:(NSInteger)height {
-    QFCellModel *cellModel = [self cellAtIndexPath:indexPath];;
+    HCellModel *cellModel = [self cellAtIndexPath:indexPath];;
     cellModel.height = height;
 }
 
 - (void)reloadModel {
     for (int i=0; i<[self.tableModel sections]; i++) {
-        QFSectionModel *sectionModel = [self.tableModel sectionAtIndex:i];
+        HSectionModel *sectionModel = [self.tableModel sectionAtIndex:i];
         NSString *sectionSelector = sectionModel.selector;
         if (sectionSelector.length > 0 && sectionModel) {
             SEL sel = NSSelectorFromString(sectionModel.selector);
@@ -141,7 +141,7 @@
             }
             
             for (int j=0; j<[sectionModel cells]; j++) {
-                QFCellModel *cellModel = [sectionModel cellAtIndex:j];
+                HCellModel *cellModel = [sectionModel cellAtIndex:j];
                 NSString *cellSelector = cellModel.selector;
                 if (cellSelector.length > 0 && cellModel) {
                     SEL sel = NSSelectorFromString(cellModel.selector);
@@ -181,9 +181,9 @@
         NSString *section = tmpArr[1];
         NSString *cellSelector = tmpArr[2].append(@":");
         
-        QFSectionModel *sectionModel = [self sectionAtIndex:section.integerValue];
+        HSectionModel *sectionModel = [self sectionAtIndex:section.integerValue];
         if (!sectionModel) {
-            sectionModel = [QFSectionModel new];
+            sectionModel = [HSectionModel new];
             [sectionModel setSelector:sectionSelector];
             [self addModel:sectionModel];
             
@@ -195,7 +195,7 @@
             }
         }
         
-        QFCellModel *cellModel = [QFCellModel new];
+        HCellModel *cellModel = [HCellModel new];
         [cellModel setSelector:cellSelector];
         [sectionModel addModel:cellModel];
         
@@ -219,15 +219,15 @@
     [self endRefresh];
 }
 
-- (QFCellRenderBlock)renderBlock {
-    return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
+- (HCellRenderBlock)renderBlock {
+    return ^UITableViewCell *(NSIndexPath *indexPath, HTableView *table) {
         UITableViewCell *cell = [table registerCell:UITableViewCell.class indexPath:indexPath];
         return cell;
     };
 }
 
-- (QFCellSelectionBlock)selectionBlock {
-    return ^(NSIndexPath *indexPath, QFTableView *table) {
+- (HCellSelectionBlock)selectionBlock {
+    return ^(NSIndexPath *indexPath, HTableView *table) {
         [table deselectRowAtIndexPath:indexPath animated:YES];
     };
 }
@@ -269,7 +269,7 @@
     [self.mj_footer endRefreshing];
 }
 
-- (void)setRefreshBlock:(QFRefreshBlock)refreshBlock {
+- (void)setRefreshBlock:(HRefreshBlock)refreshBlock {
     _refreshBlock = refreshBlock;
     if (_refreshBlock) {
         self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -281,7 +281,7 @@
     }
 }
 
-- (void)setLoadMoreBlock:(QFLoadMoreBlock)loadMoreBlock {
+- (void)setLoadMoreBlock:(HLoadMoreBlock)loadMoreBlock {
     _loadMoreBlock = loadMoreBlock;
     if (_loadMoreBlock) {
         [self setPageNo:1];
@@ -329,7 +329,7 @@
 @property (nonatomic) NSString *sectionModel;
 @end
 
-@implementation NSArray (QFTableView)
+@implementation NSArray (HTableView)
 - (NSInteger)section {
     return [objc_getAssociatedObject(self, _cmd) integerValue];
 }

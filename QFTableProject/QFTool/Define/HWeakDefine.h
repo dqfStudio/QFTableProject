@@ -1,13 +1,13 @@
 //
-//  QFWeakDefine.h
+//  HWeakDefine.h
 //  TableModel
 //
 //  Created by dqf on 2017/7/13.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#ifndef QFWeakDefine_h
-#define QFWeakDefine_h
+#ifndef HWeakDefine_h
+#define HWeakDefine_h
 
 #define ws weakify(self)
 #define ss strongify(self)

@@ -1,14 +1,14 @@
 //
-//  QFCustomCell.m
-//  QFTableProject
+//  HCustomCell.m
+//  HTableProject
 //
 //  Created by dqf on 2017/9/21.
 //  Copyright © 2017年 dqfStudio. All rights reserved.
 //
 
-#import "QFCustomCell.h"
+#import "HCustomCell.h"
 
-@implementation QFCustomCell
+@implementation HCustomCell
 
 - (void)initUI {
     _m_frame = CGRectZero;

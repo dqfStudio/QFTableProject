@@ -1,14 +1,14 @@
 //
-//  QFCellModel.m
+//  HCellModel.m
 //  TableModel
 //
 //  Created by dqf on 2017/7/13.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "QFCellModel.h"
+#import "HCellModel.h"
 
-@implementation QFCellModel
+@implementation HCellModel
 
 - (instancetype)init {
     self = [super init];

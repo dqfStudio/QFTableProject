@@ -1,5 +1,5 @@
 //
-//  UILabel+QFUtil.h
+//  UILabel+HUtil.h
 //  TestProject
 //
 //  Created by dqf on 2017/8/4.
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, NSWordAlign) {
     NSWordAlignTop
 };
 
-@interface UILabel (QFUtil)
+@interface UILabel (HUtil)
 
 //字间距
 @property (nonatomic, assign) CGFloat  characterSpace;

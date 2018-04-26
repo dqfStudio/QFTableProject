@@ -1,20 +1,20 @@
 //
 //  ViewController.m
-//  QFTableProject
+//  HTableProject
 //
 //  Created by dqf on 2017/8/4.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "QFWeakDefine.h"
-#import "QFTableView.h"
-#import "QFSwitchCell.h"
-#import "UILabel+QFUtil.h"
+#import "HWeakDefine.h"
+#import "HTableView.h"
+#import "HSwitchCell.h"
+#import "UILabel+HUtil.h"
 
 @interface ViewController ()
 
-@property (nonatomic) QFTableView *table;
+@property (nonatomic) HTableView *table;
 
 @end
 
@@ -26,7 +26,7 @@
     [self setTitle:@"main"];
     [self.navigationController.navigationBar setHidden:YES];
     
-//    _table = [[QFTableView alloc] initWithFrame:self.view.frame];
+//    _table = [[HTableView alloc] initWithFrame:self.view.frame];
 //    [_table setBackgroundColor:[UIColor clearColor]];
 //    [self.view addSubview:_table];
 //
@@ -96,28 +96,28 @@
 }
 
 - (void)sectionModel:(id)sender {
-    QFSectionModel *sectionModel = sender;
+    HSectionModel *sectionModel = sender;
     sectionModel.headerHeight = 22;
 }
 
 - (void)cellModel:(id)sender {
-    QFCellModel *cellModel = sender;
+    HCellModel *cellModel = sender;
     cellModel.height = 55;
     cellModel.renderBlock = [self renderBlock];
     cellModel.selectionBlock = [self selectionBlock];
 }
 
 - (void)cellModel2:(id)sender {
-    QFCellModel *cellModel = sender;
+    HCellModel *cellModel = sender;
     cellModel.height = 55;
     cellModel.renderBlock = [self renderBlock2];
     cellModel.selectionBlock = [self selectionBlock];
 }
 
-- (QFCellRenderBlock)renderBlock {
-    return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
+- (HCellRenderBlock)renderBlock {
+    return ^UITableViewCell *(NSIndexPath *indexPath, HTableView *table) {
         
-        QFSwitchCell *cell = [table registerCell:QFSwitchCell.class indexPath:indexPath];
+        HSwitchCell *cell = [table registerCell:HSwitchCell.class indexPath:indexPath];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
         
         switch (indexPath.row) {
@@ -142,10 +142,10 @@
     };
 }
 
-- (QFCellRenderBlock)renderBlock2 {
-    return ^UITableViewCell *(NSIndexPath *indexPath, QFTableView *table) {
+- (HCellRenderBlock)renderBlock2 {
+    return ^UITableViewCell *(NSIndexPath *indexPath, HTableView *table) {
         
-        QFSwitchCell *cell = [table registerCell:QFSwitchCell.class indexPath:indexPath];
+        HSwitchCell *cell = [table registerCell:HSwitchCell.class indexPath:indexPath];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
         cell.textLabel.text = @"路径追踪2";
         cell.callback = ^(UISwitch *sender) {};
@@ -153,8 +153,8 @@
     };
 }
 
-- (QFCellSelectionBlock)selectionBlock {
-    return ^(NSIndexPath *indexPath, QFTableView *table) {
+- (HCellSelectionBlock)selectionBlock {
+    return ^(NSIndexPath *indexPath, HTableView *table) {
         [table deselectRowAtIndexPath:indexPath animated:YES];
     };
 }

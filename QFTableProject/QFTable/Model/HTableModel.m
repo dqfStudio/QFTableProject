@@ -1,18 +1,18 @@
 //
-//  QFTableModel.m
+//  HTableModel.m
 //  TableModel
 //
 //  Created by dqf on 2017/7/13.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "QFTableModel.h"
+#import "HTableModel.h"
 
-@interface QFTableModel ()
-@property (nonatomic) NSMutableArray<QFSectionModel *> *sectionModelArray;
+@interface HTableModel ()
+@property (nonatomic) NSMutableArray<HSectionModel *> *sectionModelArray;
 @end
 
-@implementation QFTableModel
+@implementation HTableModel
 
 - (instancetype)init {
     self = [super init];
@@ -22,23 +22,23 @@
     return self;
 }
 
-- (void)addModel:(QFSectionModel *)anObject {
-    if ([anObject isKindOfClass:[QFSectionModel class]]) {
+- (void)addModel:(HSectionModel *)anObject {
+    if ([anObject isKindOfClass:[HSectionModel class]]) {
         if (![self.sectionModelArray containsObject:anObject]) {
             [self.sectionModelArray addObject:anObject];
         }
     }
 }
 
-- (QFSectionModel *)sectionAtIndex:(NSUInteger)index {
+- (HSectionModel *)sectionAtIndex:(NSUInteger)index {
     if (index < self.sectionModelArray.count) {
         return self.sectionModelArray[index];
     }
     return nil;
 }
 
-- (NSUInteger)indexOfSection:(QFSectionModel *)anObject {
-    if ([anObject isKindOfClass:[QFSectionModel class]]) {
+- (NSUInteger)indexOfSection:(HSectionModel *)anObject {
+    if ([anObject isKindOfClass:[HSectionModel class]]) {
         return [self.sectionModelArray indexOfObject:anObject];
     }
     return -1;
@@ -54,9 +54,9 @@
     }
 }
 
-- (QFSectionModel*)sectionModelAtSection:(NSInteger)section {
+- (HSectionModel*)sectionModelAtSection:(NSInteger)section {
     @try {
-        QFSectionModel *sectionModel = self.sectionModelArray[section];
+        HSectionModel *sectionModel = self.sectionModelArray[section];
         return sectionModel;
     }
     @catch (NSException *exception) {
@@ -64,10 +64,10 @@
     }
 }
 
-- (QFCellModel*)cellModelAtIndexPath:(NSIndexPath *)indexPath {
+- (HCellModel*)cellModelAtIndexPath:(NSIndexPath *)indexPath {
     @try {
-        QFSectionModel *sectionModel = self.sectionModelArray[indexPath.section];
-        QFCellModel *cellModel = [sectionModel cellAtIndex:indexPath.row];
+        HSectionModel *sectionModel = self.sectionModelArray[indexPath.section];
+        HCellModel *cellModel = [sectionModel cellAtIndex:indexPath.row];
         return cellModel;
     }
     @catch (NSException *exception) {
@@ -77,84 +77,84 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
-    QFCellHeightBlock heightBlock = cellModel.heightBlock;
+    HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+    HCellHeightBlock heightBlock = cellModel.heightBlock;
     if (heightBlock) {
-        return heightBlock(indexPath, (QFTableView *)tableView);
+        return heightBlock(indexPath, (HTableView *)tableView);
     } else {
         return cellModel.height;
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    QFSectionModel *sectionModel = [self sectionModelAtSection:section];
-    QFSectionHeightBlock headerHeightBlock = sectionModel.headerHeightBlock;
+    HSectionModel *sectionModel = [self sectionModelAtSection:section];
+    HSectionHeightBlock headerHeightBlock = sectionModel.headerHeightBlock;
     if (headerHeightBlock) {
-        return headerHeightBlock(section, (QFTableView *)tableView);
+        return headerHeightBlock(section, (HTableView *)tableView);
     } else {
         return sectionModel.headerHeight;
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    QFSectionModel *sectionModel = [self sectionModelAtSection:section];
-    QFSectionHeightBlock footerHeightBlock = sectionModel.footerHeightBlock;
+    HSectionModel *sectionModel = [self sectionModelAtSection:section];
+    HSectionHeightBlock footerHeightBlock = sectionModel.footerHeightBlock;
     if (footerHeightBlock) {
-        return footerHeightBlock(section, (QFTableView *)tableView);
+        return footerHeightBlock(section, (HTableView *)tableView);
     } else {
         return sectionModel.footerHeight;
     }
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    QFSectionModel *sectionModel = [self sectionModelAtSection:section];
-    QFViewRenderBlock headerViewRenderBlock = sectionModel.headerViewRenderBlock;
+    HSectionModel *sectionModel = [self sectionModelAtSection:section];
+    HViewRenderBlock headerViewRenderBlock = sectionModel.headerViewRenderBlock;
     if (headerViewRenderBlock) {
-        return headerViewRenderBlock(section, (QFTableView *)tableView);
+        return headerViewRenderBlock(section, (HTableView *)tableView);
     } else {
         return sectionModel.headerView;
     }
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    QFSectionModel *sectionModel = [self sectionModelAtSection:section];
-    QFViewRenderBlock footerViewRenderBlock = sectionModel.footerViewRenderBlock;
+    HSectionModel *sectionModel = [self sectionModelAtSection:section];
+    HViewRenderBlock footerViewRenderBlock = sectionModel.footerViewRenderBlock;
     if (footerViewRenderBlock) {
-        return footerViewRenderBlock(section, (QFTableView *)tableView);
+        return footerViewRenderBlock(section, (HTableView *)tableView);
     } else {
         return sectionModel.footerView;
     }
 }
 - (nullable NSIndexPath *)tableView:(UITableView *)tableView
            willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
-    QFCellWillSelectBlock willSelectBlock = cellModel.willSelectBlock;
+    HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+    HCellWillSelectBlock willSelectBlock = cellModel.willSelectBlock;
     if (willSelectBlock) {
-        return willSelectBlock(indexPath, (QFTableView *)tableView);
+        return willSelectBlock(indexPath, (HTableView *)tableView);
     }
     return indexPath;
 }
 - (nullable NSIndexPath *)tableView:(UITableView *)tableView
          willDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
-    QFCellWillSelectBlock willDeselectBlock = cellModel.willDeselectBlock;
+    HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+    HCellWillSelectBlock willDeselectBlock = cellModel.willDeselectBlock;
     if (willDeselectBlock) {
-        return willDeselectBlock(indexPath, (QFTableView *)tableView);
+        return willDeselectBlock(indexPath, (HTableView *)tableView);
     }
     return indexPath;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
-    QFCellSelectionBlock selectionBlock = cellModel.selectionBlock;
+    HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+    HCellSelectionBlock selectionBlock = cellModel.selectionBlock;
     if (selectionBlock) {
-        selectionBlock(indexPath, (QFTableView *)tableView);
+        selectionBlock(indexPath, (HTableView *)tableView);
     }
 }
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
-    QFCellSelectionBlock deselectionBlock = cellModel.deselectionBlock;
+    HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+    HCellSelectionBlock deselectionBlock = cellModel.deselectionBlock;
     if (deselectionBlock) {
-        deselectionBlock(indexPath, (QFTableView *)tableView);
+        deselectionBlock(indexPath, (HTableView *)tableView);
     }
 }
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-     QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+     HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     return cellModel.deleteConfirmationButtonTitle;
 }
 
@@ -163,42 +163,42 @@
     return [self sections];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    QFSectionModel *sectionModel = [self sectionModelAtSection:section];
+    HSectionModel *sectionModel = [self sectionModelAtSection:section];
     return [sectionModel cells];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+    HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     UITableViewCell *cell = nil;
-    QFCellRenderBlock renderBlock = cellModel.renderBlock;
+    HCellRenderBlock renderBlock = cellModel.renderBlock;
     if (renderBlock) {
-        cell = renderBlock(indexPath, (QFTableView *)tableView);
+        cell = renderBlock(indexPath, (HTableView *)tableView);
     }
     return cell;
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
-    QFCellWillDisplayBlock willDisplayBlock = cellModel.willDisplayBlock;
+    HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+    HCellWillDisplayBlock willDisplayBlock = cellModel.willDisplayBlock;
     if (willDisplayBlock) {
-        willDisplayBlock(cell, indexPath, (QFTableView *)tableView);
+        willDisplayBlock(cell, indexPath, (HTableView *)tableView);
     }
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    QFSectionModel *sectionModel = [self sectionModelAtSection:section];
+    HSectionModel *sectionModel = [self sectionModelAtSection:section];
     return sectionModel.headerTitle;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    QFSectionModel *sectionModel = [self sectionModelAtSection:section];
+    HSectionModel *sectionModel = [self sectionModelAtSection:section];
     return sectionModel.footerTitle;
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+    HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
     return cellModel.canEdit;
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    QFCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
-    QFCellCommitEditBlock commitEditBlock = cellModel.commitEditBlock;
+    HCellModel *cellModel = [self cellModelAtIndexPath:indexPath];
+    HCellCommitEditBlock commitEditBlock = cellModel.commitEditBlock;
     if (commitEditBlock) {
-        commitEditBlock(indexPath, (QFTableView *)tableView, editingStyle);
+        commitEditBlock(indexPath, (HTableView *)tableView, editingStyle);
     }
 }
 

@@ -1,14 +1,14 @@
 //
-//  QFLeftImageCell.m
+//  HLeftImageCell.m
 //  MGMobileMusic
 //
 //  Created by dqf on 2017/8/4.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "QFLeftImageCell.h"
+#import "HLeftImageCell.h"
 
-@implementation QFLeftImageCell
+@implementation HLeftImageCell
 
 - (void)setLeftImage:(NSString *)image {
     _leftImage = image;

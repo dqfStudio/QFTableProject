@@ -1,18 +1,18 @@
 //
-//  QFSwitchCell.m
+//  HSwitchCell.m
 //  MGMobileMusic
 //
 //  Created by dqf on 2017/8/4.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "QFSwitchCell.h"
+#import "HSwitchCell.h"
 
-@interface QFSwitchCell ()
+@interface HSwitchCell ()
 @property (nonatomic, strong) UISwitch *switchButton;
 @end
 
-@implementation QFSwitchCell
+@implementation HSwitchCell
 
 - (UISwitch *)switchButton {
     if (!_switchButton) {

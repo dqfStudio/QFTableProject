@@ -1,16 +1,16 @@
 //
-//  UILabel+QFUtill.m
+//  UILabel+HUtill.m
 //  TestProject
 //
 //  Created by dqf on 2017/8/4.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "UILabel+QFUtil.h"
+#import "UILabel+HUtil.h"
 #import <objc/runtime.h>
 #import <CoreText/CoreText.h>
 
-@implementation UILabel (QFUtil)
+@implementation UILabel (HUtil)
 
 - (CGFloat)characterSpace {
     return [objc_getAssociatedObject(self,_cmd) floatValue];

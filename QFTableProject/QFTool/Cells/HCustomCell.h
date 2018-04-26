@@ -1,14 +1,14 @@
 //
-//  QFCustomCell.h
-//  QFTableProject
+//  HCustomCell.h
+//  HTableProject
 //
 //  Created by dqf on 2017/9/21.
 //  Copyright © 2017年 dqfStudio. All rights reserved.
 //
 
-#import "QFBaseCell.h"
+#import "HBaseCell.h"
 
-@interface QFCustomCell : QFBaseCell
+@interface HCustomCell : HBaseCell
 @property (nonatomic) CGRect   m_frame;
 @property (nonatomic) UIColor  *m_backgroundColor;
 @end

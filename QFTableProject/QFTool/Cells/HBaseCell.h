@@ -1,5 +1,5 @@
 //
-//  QFBaseCell.h
+//  HBaseCell.h
 //  TableModel
 //
 //  Created by dqf on 2017/7/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QFBaseCell : UITableViewCell
+@interface HBaseCell : UITableViewCell
 
 //子类覆盖
 - (void)initUI;
