@@ -71,3 +71,7 @@ typedef void(^HCellInitBlock)(id cell);
 - (NSArray *(^)(NSArray *))linkCell;
 - (void (^)(NSUInteger section, NSString *sectionModel))setSectionModel;
 @end
+
+@interface NSString (HTableView)
+- (NSArray *(^)(NSUInteger))multiple;
+@end

@@ -365,3 +365,15 @@
     };
 }
 @end
+
+@implementation NSString (HTableView)
+- (NSArray *(^)(NSUInteger))multiple {
+    return ^NSArray *(NSUInteger count) {
+        NSMutableArray *mutableArr = [[NSMutableArray alloc] init];
+        for (int i=0; i<count; i++) {
+            [mutableArr addObject:self];
+        }
+        return mutableArr;
+    };
+}
+@end
