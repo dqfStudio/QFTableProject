@@ -17,10 +17,7 @@
 - (UIImageView *)rightImageView {
     if (!_rightImageView) {
         _rightImageView = [[UIImageView alloc] init];
-        [_rightImageView setBackgroundColor:[UIColor redColor]];
-        [_rightImageView setFrame:CGRectMake(0, 0, 50, 50)];
-        [_rightImageView.layer setCornerRadius:25];
-        [_rightImageView.layer setMasksToBounds:YES];
+        [_rightImageView setBackgroundColor:[UIColor clearColor]];
     }
     return _rightImageView;
 }
@@ -60,6 +57,11 @@
 
 - (void)resetRightImageViewSize:(CGSize)size {
     _rightImageSize = size;
+    CGRect frame = CGRectZero;
+    frame.size = size;
+    [self.rightImageView setFrame:frame];
+    //[self.rightImageView.layer setCornerRadius:size.width/2];
+    //[self.rightImageView.layer setMasksToBounds:YES];
     [self setRightImageAttribute];
     [self layoutSubviews];
 }
