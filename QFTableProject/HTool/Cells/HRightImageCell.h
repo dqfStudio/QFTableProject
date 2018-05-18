@@ -9,5 +9,6 @@
 #import "HBaseCell.h"
 
 @interface HRightImageCell : HBaseCell
-@property (nonatomic, strong) UIImageView *rightImage;
+@property (nonatomic) UIImageView *rightImageView;
+- (void)resetRightImageViewSize:(CGSize)size;
 @end

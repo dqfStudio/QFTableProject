@@ -11,6 +11,7 @@
 #import "HTableView.h"
 #import "HSwitchCell.h"
 #import "UILabel+HUtil.h"
+#import "HRightImageCell.h"
 
 @interface ViewController ()
 
@@ -26,11 +27,11 @@
     [self setTitle:@"main"];
     [self.navigationController.navigationBar setHidden:YES];
     
-//    _table = [[HTableView alloc] initWithFrame:self.view.frame];
-//    [_table setBackgroundColor:[UIColor clearColor]];
-//    [self.view addSubview:_table];
-//
-//    [self initUI];
+    _table = [[HTableView alloc] initWithFrame:self.view.frame];
+    [_table setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:_table];
+
+    [self initUI];
     
     UILabel *label = [[UILabel alloc] init];
     [label setFrame:CGRectMake(0, 100, 200, 190)];
@@ -47,7 +48,7 @@
     [label formatThatFits];
 //    [label setTextAlignment:NSTextAlignmentCenter];
     
-    [self.view addSubview:label];
+//    [self.view addSubview:label];
 }
 
 - (void)initUI {
@@ -69,17 +70,17 @@
 //        [self.table loadView:self withJson:data];
 //    };
     
-//    @ws
-//    self.table.refreshBlock = ^{
-//        @ss
-//        NSArray *arr = @[@"sectionModel<0>cellModel",
-//                         @"sectionModel<0>cellModel",
-//                         @"sectionModel<0>cellModel",
-//                         @"sectionModel<1>cellModel2"];
-//        sleep(2);
-//        [self.table refreshView:self withArr:arr];
-//    };
-//    
+    @ws
+    self.table.refreshBlock = ^{
+        @ss
+        NSArray *arr = @[@"sectionModel<0>cellModel",
+                         @"sectionModel<0>cellModel",
+                         @"sectionModel<0>cellModel",
+                         @"sectionModel<1>cellModel2"];
+        sleep(2);
+        [self.table refreshView:self withArr:arr];
+    };
+//
 //    self.table.loadMoreBlock = ^{
 //        @ss
 //        NSArray *arr = @[@"sectionModel<0>cellModel",
@@ -145,10 +146,10 @@
 - (HCellRenderBlock)renderBlock2 {
     return ^UITableViewCell *(NSIndexPath *indexPath, HTableView *table) {
         
-        HSwitchCell *cell = [table registerCell:HSwitchCell.class indexPath:indexPath];
+        HRightImageCell *cell = [table registerCell:HRightImageCell.class indexPath:indexPath];
         [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.35]];
         cell.textLabel.text = @"路径追踪2";
-        cell.callback = ^(UISwitch *sender) {};
+//        cell.callback = ^(UISwitch *sender) {};
         return cell;
     };
 }
