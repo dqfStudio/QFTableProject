@@ -9,6 +9,6 @@
 #import "HBaseCell.h"
 
 @interface HLeftImageCell : HBaseCell
-@property (nonatomic, strong) NSString *leftImage;
-@property (nonatomic, assign) CGSize imageSize;
+@property (nonatomic) UIImageView *leftImageView;
+- (void)resetLeftImageViewSize:(CGSize)size leftSpace:(CGFloat)leftSpace rightSpace:(CGFloat)rightSpace;
 @end
