@@ -24,7 +24,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    if (![NSStringFromCGSize(CGSizeZero) isEqualToString:NSStringFromCGSize(_rightImageSize)]) {
+    if (!CGSizeEqualToSize(_rightImageSize, CGSizeZero)) {
         if (self.accessoryType != UITableViewCellAccessoryNone) {
             //调整textLabel的坐标
             CGRect tmpFrame = self.textLabel.frame;
@@ -45,7 +45,7 @@
 }
 
 - (void)setRightImageAttribute {
-    if (![NSStringFromCGSize(CGSizeZero) isEqualToString:NSStringFromCGSize(_rightImageSize)]) {
+    if (!CGSizeEqualToSize(_rightImageSize, CGSizeZero)) {
         if (self.accessoryType != UITableViewCellAccessoryNone) {
             [self.rightImageView setFrame:CGRectMake(CGRectGetWidth(self.frame)-35-_rightImageSize.width, self.frame.size.height/2-_rightImageSize.height/2, _rightImageSize.width, _rightImageSize.height)];
             [self addSubview:self.rightImageView];
@@ -56,14 +56,16 @@
 }
 
 - (void)resetRightImageViewSize:(CGSize)size {
-    _rightImageSize = size;
-    CGRect frame = CGRectZero;
-    frame.size = size;
-    [self.rightImageView setFrame:frame];
-    //[self.rightImageView.layer setCornerRadius:size.width/2];
-    //[self.rightImageView.layer setMasksToBounds:YES];
-    [self setRightImageAttribute];
-    [self layoutSubviews];
+    if (!CGSizeEqualToSize(_rightImageSize, size)) {
+        _rightImageSize = size;
+        CGRect frame = CGRectZero;
+        frame.size = size;
+        [self.rightImageView setFrame:frame];
+        //[self.rightImageView.layer setCornerRadius:size.width/2];
+        //[self.rightImageView.layer setMasksToBounds:YES];
+        [self setRightImageAttribute];
+        [self layoutSubviews];
+    }
 }
 
 @end
