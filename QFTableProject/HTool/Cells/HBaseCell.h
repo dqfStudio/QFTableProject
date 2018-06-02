@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HBaseCell : UITableViewCell
-
+@property (nonatomic) UITableViewCellStyle style;
 //子类覆盖
 - (void)initUI;
 

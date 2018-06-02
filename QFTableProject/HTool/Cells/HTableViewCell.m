@@ -1,18 +1,14 @@
 //
-//  HLeftImageCell.m
+//  HTableViewCell.m
 //  MGMobileMusic
 //
 //  Created by dqf on 2017/8/4.
 //  Copyright © 2017年 migu. All rights reserved.
 //
 
-#import "HLeftImageCell.h"
+#import "HTableViewCell.h"
 
-UIKIT_STATIC_INLINE CGFloat HCellEdgeWidth(HCellEdgeInsets edge) {
-    return edge.left + edge.width + edge.right;
-}
-
-@implementation HLeftImageCell
+@implementation HTableViewCell
 
 - (UIImageView *)leftImageView {
     if (!_leftImageView) {
@@ -44,13 +40,15 @@ UIKIT_STATIC_INLINE CGFloat HCellEdgeWidth(HCellEdgeInsets edge) {
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    if (self.leftImageView) {
+    //解决用系统iamgeView控件，异步加载网络图片显示不出来的问题
+    if (self.leftImageView.image) {
 
         //调整leftImageView的坐标
         CGRect tmpFrame = self.imageView.frame;
         tmpFrame.origin.x = self.leftImageEdgeInsets.left;
         tmpFrame.origin.y = self.frame.size.height/2-tmpFrame.size.height/2;
         if (!CGRectEqualToRect(self.leftImageView.frame, tmpFrame)) {
+            self.imageView.frame = tmpFrame;
             self.leftImageView.frame = tmpFrame;
         }
         
@@ -60,23 +58,23 @@ UIKIT_STATIC_INLINE CGFloat HCellEdgeWidth(HCellEdgeInsets edge) {
             self.leftImageView.layer.cornerRadius = self.leftImageView.frame.size.width/2;
         }
         
+        //释放上下文
+        @autoreleasepool {
+            UIGraphicsBeginImageContext(tmpFrame.size);
+            self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+        }
+        
         //隐藏系统的imageView
-        [self.imageView setImage:nil];
         [self.imageView setHidden:YES];
-        
-        //调整textLabel的坐标
-        tmpFrame = self.textLabel.frame;
-        tmpFrame.origin.x = HCellEdgeWidth(self.leftImageEdgeInsets);
-        if (!CGRectEqualToRect(self.textLabel.frame, tmpFrame)) {
-            self.textLabel.frame = tmpFrame;
-        }
-        
-        //调整detailTextLabel的坐标
-        tmpFrame = self.detailTextLabel.frame;
-        tmpFrame.origin.x = HCellEdgeWidth(self.leftImageEdgeInsets);
-        if (!CGRectEqualToRect(self.detailTextLabel.frame, tmpFrame)) {
-            self.detailTextLabel.frame = tmpFrame;
-        }
+    }
+    
+    //解决当过style为UITableViewCellStyleValue1时，给detailTextLabel添加图片,
+    //textLabel文字不居中的问题
+    if (self.style == UITableViewCellStyleValue1) {
+        CGRect tmpFrame = self.textLabel.frame;
+        tmpFrame.origin.y = self.frame.size.height/2-tmpFrame.size.height/2;
+        self.textLabel.frame = tmpFrame;
     }
 }
 

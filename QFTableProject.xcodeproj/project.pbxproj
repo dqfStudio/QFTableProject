@@ -13,8 +13,8 @@
 		154C65CE1F34184A0060A4C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154C65CC1F34184A0060A4C0 /* Main.storyboard */; };
 		154C65D01F34184A0060A4C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154C65CF1F34184A0060A4C0 /* Assets.xcassets */; };
 		154C65D31F34184A0060A4C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154C65D11F34184A0060A4C0 /* LaunchScreen.storyboard */; };
+		1587D8D220C19AC500C0391D /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1587D8D120C19AC500C0391D /* testImage.png */; };
 		15C5734520B3C2EC0070327C /* HLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C5734320B3C2EC0070327C /* HLabelView.m */; };
-		15C5734820B3C31C0070327C /* HLeftImageCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C5734720B3C31C0070327C /* HLeftImageCell2.m */; };
 		15E602E02068F2680096B628 /* popup-title-pic-update@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E602DF2068F2680096B628 /* popup-title-pic-update@3x.png */; };
 		15F694A820921EE2008BF092 /* HCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6948820921EE2008BF092 /* HCellModel.m */; };
 		15F694A920921EE2008BF092 /* HSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6948A20921EE2008BF092 /* HSectionModel.m */; };
@@ -22,10 +22,7 @@
 		15F694AB20921EE2008BF092 /* NSObject+selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6948F20921EE2008BF092 /* NSObject+selector.m */; };
 		15F694AC20921EE2008BF092 /* HTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6949220921EE2008BF092 /* HTableView.m */; };
 		15F694AD20921EE2008BF092 /* HBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6949620921EE2008BF092 /* HBaseCell.m */; };
-		15F694AF20921EE2008BF092 /* HLeftImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6949A20921EE2008BF092 /* HLeftImageCell.m */; };
-		15F694B020921EE2008BF092 /* HLogoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6949C20921EE2008BF092 /* HLogoCell.m */; };
-		15F694B120921EE2008BF092 /* HRightImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6949E20921EE2008BF092 /* HRightImageCell.m */; };
-		15F694B220921EE2008BF092 /* HSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F694A020921EE2008BF092 /* HSwitchCell.m */; };
+		15F694AF20921EE2008BF092 /* HTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6949A20921EE2008BF092 /* HTableViewCell.m */; };
 		15F694B320921EE2008BF092 /* jsonFile.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 15F694A420921EE2008BF092 /* jsonFile.geojson */; };
 		15F694B420921EE2008BF092 /* UILabel+HUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F694A720921EE2008BF092 /* UILabel+HUtil.m */; };
 		5D40F858FBDE9471DD342B76 /* libPods-QFTableProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E25E9FE2CB1BA1ACED4001C0 /* libPods-QFTableProject.a */; };
@@ -42,10 +39,9 @@
 		154C65CF1F34184A0060A4C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		154C65D21F34184A0060A4C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		154C65D41F34184A0060A4C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1587D8D120C19AC500C0391D /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
 		15C5734320B3C2EC0070327C /* HLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLabelView.m; sourceTree = "<group>"; };
 		15C5734420B3C2EC0070327C /* HLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLabelView.h; sourceTree = "<group>"; };
-		15C5734620B3C31C0070327C /* HLeftImageCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLeftImageCell2.h; sourceTree = "<group>"; };
-		15C5734720B3C31C0070327C /* HLeftImageCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLeftImageCell2.m; sourceTree = "<group>"; };
 		15E602DF2068F2680096B628 /* popup-title-pic-update@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup-title-pic-update@3x.png"; sourceTree = "<group>"; };
 		15F6948720921EE2008BF092 /* HCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCellModel.h; sourceTree = "<group>"; };
 		15F6948820921EE2008BF092 /* HCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCellModel.m; sourceTree = "<group>"; };
@@ -59,14 +55,8 @@
 		15F6949220921EE2008BF092 /* HTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTableView.m; sourceTree = "<group>"; };
 		15F6949520921EE2008BF092 /* HBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBaseCell.h; sourceTree = "<group>"; };
 		15F6949620921EE2008BF092 /* HBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBaseCell.m; sourceTree = "<group>"; };
-		15F6949920921EE2008BF092 /* HLeftImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLeftImageCell.h; sourceTree = "<group>"; };
-		15F6949A20921EE2008BF092 /* HLeftImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLeftImageCell.m; sourceTree = "<group>"; };
-		15F6949B20921EE2008BF092 /* HLogoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLogoCell.h; sourceTree = "<group>"; };
-		15F6949C20921EE2008BF092 /* HLogoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLogoCell.m; sourceTree = "<group>"; };
-		15F6949D20921EE2008BF092 /* HRightImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRightImageCell.h; sourceTree = "<group>"; };
-		15F6949E20921EE2008BF092 /* HRightImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRightImageCell.m; sourceTree = "<group>"; };
-		15F6949F20921EE2008BF092 /* HSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSwitchCell.h; sourceTree = "<group>"; };
-		15F694A020921EE2008BF092 /* HSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSwitchCell.m; sourceTree = "<group>"; };
+		15F6949920921EE2008BF092 /* HTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTableViewCell.h; sourceTree = "<group>"; };
+		15F6949A20921EE2008BF092 /* HTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTableViewCell.m; sourceTree = "<group>"; };
 		15F694A220921EE2008BF092 /* HWeakDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWeakDefine.h; sourceTree = "<group>"; };
 		15F694A420921EE2008BF092 /* jsonFile.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonFile.geojson; sourceTree = "<group>"; };
 		15F694A620921EE2008BF092 /* UILabel+HUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HUtil.h"; sourceTree = "<group>"; };
@@ -124,6 +114,7 @@
 				154C65C91F3418490060A4C0 /* ViewController.h */,
 				154C65CA1F34184A0060A4C0 /* ViewController.m */,
 				15E602DF2068F2680096B628 /* popup-title-pic-update@3x.png */,
+				1587D8D120C19AC500C0391D /* testImage.png */,
 				154C65CC1F34184A0060A4C0 /* Main.storyboard */,
 				154C65CF1F34184A0060A4C0 /* Assets.xcassets */,
 				154C65D11F34184A0060A4C0 /* LaunchScreen.storyboard */,
@@ -208,16 +199,8 @@
 				15C5734220B3C2EC0070327C /* HLabelView */,
 				15F6949520921EE2008BF092 /* HBaseCell.h */,
 				15F6949620921EE2008BF092 /* HBaseCell.m */,
-				15F6949920921EE2008BF092 /* HLeftImageCell.h */,
-				15F6949A20921EE2008BF092 /* HLeftImageCell.m */,
-				15C5734620B3C31C0070327C /* HLeftImageCell2.h */,
-				15C5734720B3C31C0070327C /* HLeftImageCell2.m */,
-				15F6949B20921EE2008BF092 /* HLogoCell.h */,
-				15F6949C20921EE2008BF092 /* HLogoCell.m */,
-				15F6949D20921EE2008BF092 /* HRightImageCell.h */,
-				15F6949E20921EE2008BF092 /* HRightImageCell.m */,
-				15F6949F20921EE2008BF092 /* HSwitchCell.h */,
-				15F694A020921EE2008BF092 /* HSwitchCell.m */,
+				15F6949920921EE2008BF092 /* HTableViewCell.h */,
+				15F6949A20921EE2008BF092 /* HTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -321,6 +304,7 @@
 				154C65D31F34184A0060A4C0 /* LaunchScreen.storyboard in Resources */,
 				15E602E02068F2680096B628 /* popup-title-pic-update@3x.png in Resources */,
 				154C65D01F34184A0060A4C0 /* Assets.xcassets in Resources */,
+				1587D8D220C19AC500C0391D /* testImage.png in Resources */,
 				15F694B320921EE2008BF092 /* jsonFile.geojson in Resources */,
 				154C65CE1F34184A0060A4C0 /* Main.storyboard in Resources */,
 			);
@@ -383,16 +367,12 @@
 			files = (
 				15F694A820921EE2008BF092 /* HCellModel.m in Sources */,
 				15F694A920921EE2008BF092 /* HSectionModel.m in Sources */,
-				15F694B220921EE2008BF092 /* HSwitchCell.m in Sources */,
 				15F694AC20921EE2008BF092 /* HTableView.m in Sources */,
-				15C5734820B3C31C0070327C /* HLeftImageCell2.m in Sources */,
 				15C5734520B3C2EC0070327C /* HLabelView.m in Sources */,
 				15F694B420921EE2008BF092 /* UILabel+HUtil.m in Sources */,
-				15F694B120921EE2008BF092 /* HRightImageCell.m in Sources */,
 				15F694AD20921EE2008BF092 /* HBaseCell.m in Sources */,
 				15F694AB20921EE2008BF092 /* NSObject+selector.m in Sources */,
-				15F694AF20921EE2008BF092 /* HLeftImageCell.m in Sources */,
-				15F694B020921EE2008BF092 /* HLogoCell.m in Sources */,
+				15F694AF20921EE2008BF092 /* HTableViewCell.m in Sources */,
 				154C65CB1F34184A0060A4C0 /* ViewController.m in Sources */,
 				154C65C81F3418490060A4C0 /* AppDelegate.m in Sources */,
 				154C65C51F3418490060A4C0 /* main.m in Sources */,

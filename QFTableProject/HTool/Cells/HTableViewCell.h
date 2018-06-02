@@ -1,5 +1,5 @@
 //
-//  HLeftImageCell.h
+//  HTableViewCell.h
 //  MGMobileMusic
 //
 //  Created by dqf on 2017/8/4.
@@ -26,8 +26,8 @@ UIKIT_STATIC_INLINE bool HCellEdgeEqualToEdge(HCellEdgeInsets edge1, HCellEdgeIn
     return equal;
 }
 
-@interface HLeftImageCell : HBaseCell
-@property (nonatomic) UIImageView *leftImageView;
-@property (nonatomic) HCellEdgeInsets leftImageEdgeInsets;
-@property (nonatomic) BOOL filletedCorner; //是否圆角
+@interface HTableViewCell : HBaseCell
+@property (nonatomic) UIImageView *leftImageView; //代替系统的imageView控件
+@property (nonatomic) HCellEdgeInsets leftImageEdgeInsets; //图片大小和左右边距，上下边距自动计算且居中
+@property (nonatomic) BOOL filletedCorner; //leftImageView控件是否圆角，默认不是圆角，如果是圆角则为圆形
 @end
