@@ -14,6 +14,8 @@
 		154C65D01F34184A0060A4C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154C65CF1F34184A0060A4C0 /* Assets.xcassets */; };
 		154C65D31F34184A0060A4C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154C65D11F34184A0060A4C0 /* LaunchScreen.storyboard */; };
 		1587D8D220C19AC500C0391D /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1587D8D120C19AC500C0391D /* testImage.png */; };
+		1587D8D820C24B4000C0391D /* HBaseHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1587D8D720C24B4000C0391D /* HBaseHeaderFooterView.m */; };
+		1587D8DB20C2530600C0391D /* HTableSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1587D8DA20C2530600C0391D /* HTableSignal.m */; };
 		15C5734520B3C2EC0070327C /* HLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C5734320B3C2EC0070327C /* HLabelView.m */; };
 		15E602E02068F2680096B628 /* popup-title-pic-update@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E602DF2068F2680096B628 /* popup-title-pic-update@3x.png */; };
 		15F694A820921EE2008BF092 /* HCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F6948820921EE2008BF092 /* HCellModel.m */; };
@@ -40,6 +42,10 @@
 		154C65D21F34184A0060A4C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		154C65D41F34184A0060A4C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1587D8D120C19AC500C0391D /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
+		1587D8D620C24B4000C0391D /* HBaseHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBaseHeaderFooterView.h; sourceTree = "<group>"; };
+		1587D8D720C24B4000C0391D /* HBaseHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBaseHeaderFooterView.m; sourceTree = "<group>"; };
+		1587D8D920C2530600C0391D /* HTableSignal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTableSignal.h; sourceTree = "<group>"; };
+		1587D8DA20C2530600C0391D /* HTableSignal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTableSignal.m; sourceTree = "<group>"; };
 		15C5734320B3C2EC0070327C /* HLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLabelView.m; sourceTree = "<group>"; };
 		15C5734420B3C2EC0070327C /* HLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLabelView.h; sourceTree = "<group>"; };
 		15E602DF2068F2680096B628 /* popup-title-pic-update@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup-title-pic-update@3x.png"; sourceTree = "<group>"; };
@@ -178,6 +184,8 @@
 			children = (
 				15F6949120921EE2008BF092 /* HTableView.h */,
 				15F6949220921EE2008BF092 /* HTableView.m */,
+				1587D8D920C2530600C0391D /* HTableSignal.h */,
+				1587D8DA20C2530600C0391D /* HTableSignal.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +207,8 @@
 				15C5734220B3C2EC0070327C /* HLabelView */,
 				15F6949520921EE2008BF092 /* HBaseCell.h */,
 				15F6949620921EE2008BF092 /* HBaseCell.m */,
+				1587D8D620C24B4000C0391D /* HBaseHeaderFooterView.h */,
+				1587D8D720C24B4000C0391D /* HBaseHeaderFooterView.m */,
 				15F6949920921EE2008BF092 /* HTableViewCell.h */,
 				15F6949A20921EE2008BF092 /* HTableViewCell.m */,
 			);
@@ -366,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15F694A820921EE2008BF092 /* HCellModel.m in Sources */,
+				1587D8DB20C2530600C0391D /* HTableSignal.m in Sources */,
 				15F694A920921EE2008BF092 /* HSectionModel.m in Sources */,
 				15F694AC20921EE2008BF092 /* HTableView.m in Sources */,
 				15C5734520B3C2EC0070327C /* HLabelView.m in Sources */,
@@ -377,6 +388,7 @@
 				154C65C81F3418490060A4C0 /* AppDelegate.m in Sources */,
 				154C65C51F3418490060A4C0 /* main.m in Sources */,
 				15F694AA20921EE2008BF092 /* HTableModel.m in Sources */,
+				1587D8D820C24B4000C0391D /* HBaseHeaderFooterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

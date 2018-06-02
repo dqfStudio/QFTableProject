@@ -72,6 +72,7 @@
 - (void)sectionModel:(id)sender {
     HSectionModel *sectionModel = sender;
     sectionModel.headerHeight = 0;
+    //sectionModel.headerViewRenderBlock = [self headerBlock];
 }
 
 - (void)cellModel:(id)sender {
@@ -95,6 +96,12 @@
     cellModel.selectionBlock = [self selectionBlock];
 }
 
+- (HViewRenderBlock)headerBlock {
+    return ^UIView *(NSInteger section, HTableView *table) {
+        UITableView;
+        return nil;
+    };
+}
 
 - (HCellRenderBlock)renderBlock {
     return ^UITableViewCell *(NSIndexPath *indexPath, HTableView *table) {
