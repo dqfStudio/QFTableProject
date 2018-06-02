@@ -98,6 +98,12 @@
     if (!cell) {
         cell = [[cellClass alloc] initWithStyle:style reuseIdentifier:reuseIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        if ([cell respondsToSelector:@selector(model)]) {
+            HBaseCell *tmpCell = (HBaseCell *)cell;
+            tmpCell.table = self;
+            tmpCell.indexPath = indexPath;
+            tmpCell.model = [self cellAtIndexPath:indexPath];
+        }
         if (block) {
             block(cell);
         }

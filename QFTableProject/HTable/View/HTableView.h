@@ -10,6 +10,7 @@
 #import "HTableModel.h"
 #import "NSObject+selector.h"
 #import "HSectionModel.h"
+#import "HBaseCell.h"
 #import "MJRefresh.h"
 
 typedef void (^HRefreshBlock)(void);
