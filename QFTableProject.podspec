@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "QFTableProject"
-  s.version      = "0.0.1"
+  s.version      = “0.0.3”
   s.summary      = "A short description of QFTableProject."
 
   # This description is used to generate tags and improve search results.
